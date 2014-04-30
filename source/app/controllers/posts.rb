@@ -30,12 +30,6 @@ get '/posts/:id' do
   #show a particular post, to READ, UPDATE (button), or DELETE (button)
 end
 
-# get '/users/:user_id/posts/:post_id' do
-#   @post = Post.find(params[:post_id])
-#   @tags = @post.tags
-#   erb :'posts/show'
-# end
-
 post '/posts' do
   @new_post = Post.create(params[:post])
   @tag_names = params[:tagnames].split(', ')
@@ -54,7 +48,7 @@ post '/posts' do
   end
 
   #--------------------------------------------------
-  @new_post.tags = @tags
+  @new_post.tags = @tags  # THIS IS WHERE THE TAGGINGS ARE DECLARED.
   redirect to "/users/#{session[:user_id]}/posts"
   # if not @new_post.errors.messages.empty?
   #   @error_messages = @new_post.errors.messages
