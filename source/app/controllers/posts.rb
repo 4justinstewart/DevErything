@@ -56,6 +56,7 @@ post '/posts' do
 end
 
 get '/users/:user_id/posts/:id/update' do
+  @categories = Category.all
   @post = Post.find(params[:id])
   @tags = @post.tags
   #HTML form rendered with existing post info
