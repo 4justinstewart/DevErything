@@ -23,6 +23,10 @@ h3 {
   margin-left: 20px;
 }
 
+h2 {
+  display: inline-block;
+}
+
 form {
 }
 
@@ -38,6 +42,15 @@ form input {
 form textarea {
   margin: 0 0 10px 20px;
   border-radius: 3px;
+}
+
+form select {
+  border: 1px solid black;
+  margin: 10px 10px 10px 20px;
+  height: 35px;
+}
+
+form option {
 }
 
 .submit {

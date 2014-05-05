@@ -4,7 +4,7 @@
     <div class="resource_col">
       <h2><%= cat.name %></h2>
       <ul>
-        <% cat.posts.each do |post| %>
+        <% cat.posts.where("user_id = #{session[:user_id]}").each do |post| %>
           <li><a href="/posts/<%=post.id%>"><%=post.title%></a></li>
         <% end %>
       </ul>
@@ -18,5 +18,3 @@
     </form>
   <% end %>
 </div>
-
-

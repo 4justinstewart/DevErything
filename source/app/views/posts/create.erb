@@ -1,11 +1,16 @@
 <div class='container'>
-  <h1>Create a new post</h1>
+  <h1>Post a New Resource</h1>
   <form action='/posts' method='post'>
     <input type="hidden" name="post[user_id]" value="<%=session[:user_id]%>"/>
-    <h2><input type='text' placeholder="<%= @title_error ||= "Title" %>" name='post[title]'/></h2>
-    <textarea name='post[content]' cols="60" rows="5" placeholder="<%= @content_error ||= "Post Content" %>"></textarea><br><br>
-    <textarea name='tagnames' cols="60" rows="2" placeholder="List tags separated by commas"></textarea><br><br>
-
+    <h2><input type='text' placeholder="<%= @title_error ||= "Title" %>" name='post[title]' required/></h2>
+    <select name="post[category_id]">
+      <% @categories.each do |cat| %>
+        <option value="<%= cat.id %>"><%= cat.name %></option>
+      <% end %>
+    </select>
+    <input type='text' placeholder="URL" name="post[url]" required/><br>
+    <textarea name='tagnames' cols="60" rows="2" placeholder="Tags separated by commas, ie. Javascript, Git, Parsing" required></textarea><br><br>
+    <textarea name='post[content]' cols="60" rows="5" placeholder="<%= @content_error ||= "Description of Resource Content" %>"></textarea><br><br>
     <button type='submit'>Create your post</button>
   </form>
 
