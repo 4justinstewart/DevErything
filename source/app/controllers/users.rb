@@ -10,7 +10,7 @@ post '/signin' do
   @user = User.authenticate(@email, @password)
   if @user
     session[:user_id] = @user.id
-    redirect "/users/#{@user.id}/posts"
+    redirect "/posts"
   else
     redirect '/'
   end

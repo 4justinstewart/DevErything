@@ -23,6 +23,10 @@ h3 {
   margin-left: 20px;
 }
 
+h2 {
+  display: inline-block;
+}
+
 form {
 }
 
@@ -38,6 +42,15 @@ form input {
 form textarea {
   margin: 0 0 10px 20px;
   border-radius: 3px;
+}
+
+form select {
+  border: 1px solid black;
+  margin: 10px 10px 10px 20px;
+  height: 35px;
+}
+
+form option {
 }
 
 .submit {
@@ -64,39 +77,54 @@ button a {
   text-decoration: none;
 }
 
-li {
-  /*border: 1px solid black;*/
+td {
   font-size: 20px;
   font-weight: bold;
-  list-style-type: none;
-  padding-bottom: 5px
+  padding: 5px 5px 5px 5px;
 
 }
 
-li a {
+td a {
   /*border: 1px solid black;*/
   text-decoration: none;
-  padding: 10px;
+
+}
+/*
+.title {
+  width: 100%;
+}*/
+
+.details {
+  font-size: 16px;
 }
 
-li a:visited {
+.vote {
+  width: 25px;
+}
+
+/*.resource_col {
+  border-bottom: 3px solid #183a47;
+
+}*/
+
+.resource_col a:visited {
   color: #5d757e;
 
 }
 
-li a:link {
+.resource_col a:link {
   color: #5d757e;
 }
 
-li a:hover{
+.resource_col a:hover{
   color: #183a47;
 }
 
-li a:active {
+td a:active {
 
 }
 
-img {
+#dbc {
   width: 55%;
   float:right;
   margin: 5% 2% 0 0;

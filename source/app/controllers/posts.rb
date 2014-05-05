@@ -1,25 +1,25 @@
 enable :sessions
 
-get '/posts' do
-  #show all posts
-  @header = "All the Posts"
+get '/posts' do  #show all posts
+  @header = "Resource HQ"
   @button_route = "/users/#{session[:user_id]}/posts"
   @button_text = "See Your Posts"
   @posts = Post.all
+  @categories = Category.all
   erb :'posts/index'
 end
 
-get '/users/:user_id/posts' do
-# erb file contains button to see all posts
-  @header = "Your Awesome Posts"
+get '/users/:user_id/posts' do  # erb file contains button to see all posts
+  @header = "Resources You've Posted"
   @button_route = "/posts"
-  @button_text = "See All Posts"
+  @button_text = "See All Resources"
   @posts = current_user.posts
-  erb :'posts/index'
+  @categories = Category.all
+  erb :'users/posts'
 end
 
-get '/users/:user_id/posts/new' do
-  # make a new post (HTML form view)
+get '/users/:user_id/posts/new' do  # make a new post (HTML form view)
+  @categories = Category.all
   erb :'posts/create'
 end
 
@@ -31,6 +31,8 @@ get '/posts/:id' do
 end
 
 post '/posts' do
+  p params
+
   @new_post = Post.create(params[:post])
   @tag_names = params[:tagnames].split(', ')
 
@@ -50,17 +52,11 @@ post '/posts' do
   #--------------------------------------------------
   @new_post.tags = @tags  # THIS IS WHERE THE TAGGINGS ARE DECLARED.
   redirect to "/users/#{session[:user_id]}/posts"
-  # if not @new_post.errors.messages.empty?
-  #   @error_messages = @new_post.errors.messages
-  #   # @title_error ||= "Title "+ @error_messages[:title].first
-  #   # @content_error ||= "Content "+@error_messages[:content]
-  #   erb :'posts/create'
-  # else
-  #   redirect to '/posts'
-  # end
+
 end
 
 get '/users/:user_id/posts/:id/update' do
+  @categories = Category.all
   @post = Post.find(params[:id])
   @tags = @post.tags
   #HTML form rendered with existing post info

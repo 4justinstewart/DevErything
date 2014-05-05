@@ -3,12 +3,14 @@
   <form action='/posts/<%= @post.id %>' method='post'>
     <input type='hidden' name='_method' value='patch'>
     <h2><input type='text' placeholder='Title' name='post[title]' value='<%= @post.title %>'/></h2>
-    <!-- <h2><input type='text' placeholder="Author" name='post[author]' value='<%= @post.author %>'/></h2>
- -->    <textarea name='post[content]' cols="60" rows="5" placeholder="Post Content"><%= @post.content %></textarea><br><br>
-
-    <!-- IS THIS LEGIT IN TERMS OF CONVENTION -->
-    <textarea name='tagnames' cols="60" rows="2" placeholder="List tags separated by commas"><% @tags.each do |tag| %><%= tag.name %>, <% end %></textarea><br><br>
-
+    <select name="post[category_id]">
+      <% @categories.each do |cat| %>
+        <option value="<%= cat.id %>"><%= cat.name %></option>
+      <% end %>
+    </select>
+     <input type='text' placeholder="URL" name="post[url]" value='<%= @post.url %>'/><br>
+     <textarea name='tagnames' cols="60" rows="2" placeholder="List tags separated by commas"><% @tags.each do |tag| %><%= tag.name %>, <% end %></textarea><br><br>
+      <textarea name='post[content]' cols="60" rows="5" placeholder="Post Content"><%= @post.content %></textarea><br><br>
     <button type='submit'>Update</button>
   </form>
 
