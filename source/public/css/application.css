@@ -7,6 +7,31 @@
   background-color: #a2c0cc;
 }
 
+.large_container {
+  margin: 20px auto;
+  width: 1000px;
+  padding: 20px;
+  border: 1px dotted black;
+  border-radius: 5px;
+  background-color: #a2c0cc;
+}
+
+nav {
+}
+
+h1{
+  display: inline-block;
+  margin: 0 0 0 2%;
+  font-size: 48px;
+  text-align: center;
+
+}
+
+nav img {
+  width: 6%;
+  margin-right: 10px;
+}
+
 th {
   text-align: left;
 }
@@ -15,16 +40,10 @@ body {
   background-color: #d9e5ea;
 }
 
-h1 {
-  text-align: center;
-}
+
 
 h3 {
   margin-left: 20px;
-}
-
-h2 {
-  display: inline-block;
 }
 
 form {
@@ -60,9 +79,9 @@ form option {
 button {
   background-color: #6a9aae;
   margin: 0;
-  padding: 10px;
+  padding: 0px 10px;
   border-radius: 3px;
-  width: 25%;
+  width: 28%;
   border: 1px solid #ecf2f4;
   -moz-box-shadow: 0 0 5px 1px #ecf2f4;
   -webkit-box-shadow: 0 0 5px 1px #ecf2f4;
@@ -72,9 +91,20 @@ button {
   margin: 10px 20px;
 }
 
+.dashboard button {
+  font-size: 24px;
+}
+
 button a {
   color: #d9e5ea;
   text-decoration: none;
+ 
+
+}
+
+button img {
+  width: 40px;
+  margin-right: 25px;
 }
 
 td {
@@ -99,13 +129,19 @@ td a {
 }
 
 .vote {
-  width: 25px;
+  width: 30px;
+  color: red;
 }
 
-/*.resource_col {
-  border-bottom: 3px solid #183a47;
+.resource_col {
+  width: 32%;
+  display: inline-block;
+  margin: 0 5px;
+}
 
-}*/
+.resource_col h2 {
+  text-align: center;
+}
 
 .resource_col a:visited {
   color: #5d757e;
@@ -120,10 +156,12 @@ td a {
   color: #183a47;
 }
 
-td a:active {
-
+.dashboard {
+  border-top:3px solid #d9e5ea;
+  margin-top: 30px;
+  padding-top: 30px;
+  text-align: center;
 }
-
 #dbc {
   width: 55%;
   float:right;
