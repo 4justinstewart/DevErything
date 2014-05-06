@@ -1,0 +1,10 @@
+<% if current_user %>
+  <div class="dashboard">
+
+    <button><img src="compose.svg"><a href="/users/<%=session[:user_id]%>/posts/new">Post a Resource</a></button>
+    <button><a href='<%= @button_route %>'><%= @button_text %></a></button>
+    <form class="submit" action='/signout' method='post'>
+      <button type='submit'>Logout</button>
+    </form>
+  </div>
+<% end %>

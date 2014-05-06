@@ -1,12 +1,12 @@
-<div class="container">
-  <h1><%= @header %></h1>
+<div class="large_container">
+  <%= erb :_nav %>
   <% @categories.each do |cat| %>
     <div class="resource_col">
       <h2><%= cat.name %></h2>
       <% cat.posts.each do |post| %>
         <table>
           <tr>
-            <td colspan='5'><a href="<%= post.url %>"><%=post.title%></a></td>
+            <td colspan='5'><a href="http://<%= post.url %>"><%=post.title%></a></td>
           </tr>
         </table>
         <table>
@@ -19,13 +19,7 @@
       <% end %>
     </div>
   <% end %>
-  <% if current_user %>
-    <button><a href="/users/<%=session[:user_id]%>/posts/new">Post a Resource</a></button>
-    <button><a href='<%= @button_route %>'><%= @button_text %></a></button>
-    <form class="submit" action='/signout' method='post'>
-      <button type='submit'>Logout</button>
-    </form>
-  <% end %>
+  <%= erb :_dashboard %>
 </div>
 
 

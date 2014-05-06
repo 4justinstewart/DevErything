@@ -25,14 +25,13 @@ end
 
 get '/posts/:id' do
   @post = Post.find(params[:id])
+  @header = @post.title
   @tags = @post.tags
   erb :'posts/show'
   #show a particular post, to READ, UPDATE (button), or DELETE (button)
 end
 
 post '/posts' do
-  p params
-
   @new_post = Post.create(params[:post])
   @tag_names = params[:tagnames].split(', ')
 

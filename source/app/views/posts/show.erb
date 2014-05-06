@@ -1,13 +1,12 @@
 <div class='container'>
-  <h1><%= @post.title %></h1>
-  <h3><%= @post.author %></h1>
+  <h1><a href="http://<%= @post.url %>"><%= @header %></a></h1>
   <p><%= @post.content %></p>
 </div>
 
 <div class='container'>
   <h2>Tags associated with this post:</h2>
   <% @tags.each do |tag| %>
-    <a href='#'><%= tag.name %></a>
+    <a href='/tags/<%= tag.id %>'><%= tag.name %></a>
   <% end %>
 </div>
 <% if @post.user_id == session[:user_id] %>
