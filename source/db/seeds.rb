@@ -14,7 +14,7 @@ end
   Tag.create(name: @name)
 end
 
-5.times do
+60.times do
   title = Faker::Lorem.sentence(1).titleize.gsub!('.', '')
   url = Faker::Internet.url
   content = Faker::Lorem.paragraph(3)

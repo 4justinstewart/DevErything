@@ -1,7 +1,11 @@
 <div class='container'>
   <h1><a href="http://<%= @post.url %>"><%= @header %></a></h1>
   <p><%= @post.content %></p>
+  <a href="#"><img class="vote" src="/down_arrow.svg"></a>
+  <a href="#"><img class="vote" src="/up_arrow.svg"></a>
 </div>
+
+  
 
 <div class='container'>
   <h2>Tags associated with this post:</h2>
@@ -18,3 +22,11 @@
     </form>
   </div>
 <% end %>
+
+
+    <!--    <table>
+          <tr>
+            <td></td>
+            <td></td>
+          </tr>
+        </table> -->

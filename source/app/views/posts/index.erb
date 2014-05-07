@@ -6,14 +6,7 @@
       <% cat.posts.each do |post| %>
         <table>
           <tr>
-            <td colspan='5'><a href="http://<%= post.url %>"><%=post.title%></a></td>
-          </tr>
-        </table>
-        <table>
-          <tr>
-            <td><a href="#"><img class="vote" src="up_arrow.svg"></a></td>
-            <td><a href="#"><img class="vote" src="down_arrow.svg"></a></td>
-            <td><a class="details" href="/posts/<%=post.id%>">{Post Details}</a></td>
+            <td colspan='5'><a href="/posts/<%= post.id %>"><%=post.title%></a></td>
           </tr>
         </table>
       <% end %>
@@ -23,3 +16,20 @@
 </div>
 
 
+<table>
+  <tr>
+    <td class="checkbox">Checkbox</td>
+    <td>Post title</td>
+  </tr>
+
+</table>
+
+
+<!-- jquery
+
+(checkbox).select{
+  var post_name = (td_sibling).value
+  ajax
+  
+
+} -->
