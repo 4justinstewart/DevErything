@@ -16,6 +16,21 @@
   background-color: #a2c0cc;
 }
 
+.dashboard {
+  /*border: 1px solid black;*/
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+
+
+}
+
+.dashboard img {
+  display: block;
+  width: 70px;
+}
+
 nav {
 }
 
