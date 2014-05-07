@@ -9,8 +9,8 @@
       <% end %>
     </select>
     <input type='text' placeholder="URL" name="post[url]" required/><br>
-    <textarea name='tagnames' cols="60" rows="2" placeholder="Tags separated by commas, ie. Javascript, Git, Parsing" required></textarea><br><br>
     <textarea name='post[content]' cols="60" rows="5" placeholder="<%= @content_error ||= "Description of Resource Content" %>"></textarea><br><br>
+    <textarea class="tags_input" name='tagnames' cols="60" rows="2" placeholder="Tags separated by commas, ie. Javascript, Git, Parsing" required></textarea><br><br>
     <button type='submit'>Create your post</button>
   </form>
 

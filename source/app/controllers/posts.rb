@@ -93,3 +93,37 @@ delete '/posts/:id' do
 
   redirect to "/users/#{session[:user_id]}/posts"
 end
+
+
+#------------------------------------added by rohan
+
+post '/get_tags' do
+
+  puts "I AM HERE"
+  tags_array = []
+  Tag.all.each do |tag|
+    tags_array.push(tag.name)
+  end
+
+  return tags_array.to_json
+  
+
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
