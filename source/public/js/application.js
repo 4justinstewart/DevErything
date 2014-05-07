@@ -10,7 +10,7 @@ $(document).ready(function() {
  
 		var availableTags = []; 
 
-		$("#tags_input").focus(function(){
+		$(".tags_input").focus(function(){
 			$.ajax({
 			  type: "POST",
 			  url: "/get_tags",
@@ -24,7 +24,7 @@ $(document).ready(function() {
 		}), 
 
 
-    $("#tags_input")
+    $(".tags_input")
       // don't navigate away from the field on tab when selecting an item
       .bind( "keydown", function( event ) {
         if ( event.keyCode === $.ui.keyCode.TAB &&
