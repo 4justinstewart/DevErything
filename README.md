@@ -9,3 +9,5 @@ Candidates at bootcamps demand resources that deliver high value.  This tool is 
 ## Features to Add
 
 Autocomplete of search bar with sanitized data
+Activerecord validations on all models
+Javascript validations on Login/Signup
