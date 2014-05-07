@@ -17,11 +17,11 @@
 }
 
 .dashboard {
-  /*border: 1px solid black;*/
+  border: 1px solid black;
   display: inline-block;
-  position: absolute;
-  left: 0px;
-  top: 0px;
+  position: fixed;
+  top: 20px;
+  padding: 25px 15px;
 
 
 }
@@ -29,6 +29,7 @@
 .dashboard img {
   display: block;
   width: 70px;
+  margin-bottom: 10px;
 }
 
 nav {
