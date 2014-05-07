@@ -15,12 +15,11 @@ end
 end
 
 5.times do
-  @title = Faker::Lorem.sentence(1).titleize.gsub!('.', '')
-  @url = Faker::Internet.url
-  @content = Faker::Lorem.paragraph(3)
-  @author = Faker::Name.name
-  @category = Category.all.sample
-  Post.create(title: @title, url: @url, content: @content, author: @author, user_id: 1, category_id: @category.id )
+  title = Faker::Lorem.sentence(1).titleize.gsub!('.', '')
+  url = Faker::Internet.url
+  content = Faker::Lorem.paragraph(3)
+  category = Category.all.sample
+  Post.create(title: title, url: url, content: content, user_id: 1, category_id: category.id )
 end
 
 5.times do |i|

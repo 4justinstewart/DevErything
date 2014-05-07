@@ -5,6 +5,7 @@ get '/posts' do  #show all posts
   @button_route = "/users/#{session[:user_id]}/posts"
   @button_text = "See Your Posts"
   @posts = Post.all
+
   @categories = Category.all
   erb :'posts/index'
 end

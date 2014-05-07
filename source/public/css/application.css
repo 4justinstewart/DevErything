@@ -98,7 +98,7 @@ button {
 button a {
   color: #d9e5ea;
   text-decoration: none;
- 
+
 
 }
 
@@ -115,7 +115,7 @@ td {
 }
 
 td a {
-  /*border: 1px solid black;*/
+  /*border: 1px solid black;
   text-decoration: none;
 
 }
@@ -161,7 +161,7 @@ td a {
   margin-top: 30px;
   padding-top: 30px;
   text-align: center;
-}
+}*/
 #dbc {
   width: 55%;
   float:right;
@@ -171,8 +171,8 @@ td a {
 
 header {
   display: inline;
- /* position: absolute;
-  top:0;*/
+  position: absolute;
+  top:0;
 }
 
 header img {
