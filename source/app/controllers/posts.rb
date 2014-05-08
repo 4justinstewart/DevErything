@@ -11,7 +11,7 @@ get '/posts' do  #show all posts
 end
 
 get '/users/:user_id/posts' do  # erb file contains button to see all posts
-  @header = "Resources You've Posted"
+  @header = "Dashboard"
   @button_route = "/posts"
   @button_text = "See All Resources"
   @posts = current_user.posts
@@ -27,6 +27,7 @@ end
 get '/posts/:id' do
   @post = Post.find(params[:id])
   @header = @post.title
+  @source = @post.url 
   @tags = @post.tags
   erb :'posts/show'
   #show a particular post, to READ, UPDATE (button), or DELETE (button)
