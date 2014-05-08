@@ -108,8 +108,6 @@ post '/get_tags' do
 
   return tags_array.to_json
 
-
-
 end
 
 
