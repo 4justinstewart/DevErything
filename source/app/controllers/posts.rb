@@ -27,7 +27,7 @@ end
 get '/posts/:id' do
   @post = Post.find(params[:id])
   @header = @post.title
-  @source = @post.url 
+  @source = @post.url
   @tags = @post.tags
   erb :'posts/show'
   #show a particular post, to READ, UPDATE (button), or DELETE (button)
@@ -88,11 +88,11 @@ patch '/posts/:id' do
   redirect "/posts/#{@post_to_edit.id}"
 end
 
-delete '/posts/:id' do
+get '/posts/:id/delete' do
   @post = Post.find(params[:id])
   @post.destroy
 
-  redirect to "/users/#{session[:user_id]}/posts"
+  redirect to "/users/#{current_user.id}/posts"
 end
 
 
@@ -107,8 +107,6 @@ post '/get_tags' do
   end
 
   return tags_array.to_json
-  
-
 
 end
 
