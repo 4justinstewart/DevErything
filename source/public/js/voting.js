@@ -1,8 +1,23 @@
 $(function(){
-  $('vote').on('click', function(e) {
+  $('[src="/down_arrow.svg"]').on('click', function(e) {
     e.preventDefault;
-    $.post('/votes', )
-  })
+    var postId = $('[type="hidden"]').val();
+    $.post('/votes', { upvote: false, downvote: true, post_id: postId }, function(res) {
+      if (res === "200") {
+        console.log("success");
+        $('.vote').detach();
+      }
+    });
+  });
 
-
+  $('[src="/up_arrow.svg"]').on('click', function(e) {
+    e.preventDefault;
+    var postId = $('[type="hidden"]').val();
+    $.post('/votes', { upvote: true, downvote: false, post_id: postId }, function(res) {
+      if (res === "200") {
+        console.log("success");
+        $('.vote').detach();
+      }
+    });
+  });
 });
