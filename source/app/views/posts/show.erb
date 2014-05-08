@@ -1,16 +1,19 @@
 <div class='container'>
   <%= erb :_nav %>
+  <input type="hidden" name="post_id" value="<%= @post.id %>"/>
   <p><%= @post.content %></p>
-  <% if current_user.posts.include?(@post) %>  
-    <a href="#"><img class="update" src="/pencil.svg"></a>
-    <a href="#"><img class="update" src="/trash.svg"></a>
+
+  <% if current_user.posts.include?(@post) %>
+    <a href='/users/<%=session[:user_id]%>/posts/<%= @post.id %>/update'><img class="update" src="/pencil.svg"></a>
+    <a href="/posts/<%= @post.id %>/delete"><img class="update" src="/trash.svg"></a>
   <% else %>
-    <a href="#"><img class="vote" src="/down_arrow.svg"></a>
-    <a href="#"><img class="vote" src="/up_arrow.svg"></a>
+    <img class="vote" src="/down_arrow.svg">
+    <img class="vote" src="/up_arrow.svg">
   <% end %>
+
 </div>
 
-  
+
 
 <div class='container'>
   <h2>Tags associated with this post:</h2>
@@ -20,7 +23,7 @@
 </div>
 <% if @post.user_id == session[:user_id] %>
   <div class='container'>
-    <button id='edit'><a href='/users/<%=session[:user_id]%>/posts/<%= @post.id %>/update'>Edit Post</a></button>
+    <button id='edit'><a >Edit Post</a></button>
     <form action='/posts/<%= @post.id %>' method='post'>
       <input type='hidden' name='_method' value='delete'>
       <button type='submit'>Delete Post</button>
