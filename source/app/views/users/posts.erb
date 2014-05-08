@@ -12,8 +12,21 @@
       </table>
     </div>
   <% end %>
+  <div id="favorites">
+    <h1 style="text-decoration: underline">Favorites</h1>
+    <% current_user.favorites.each do |favorite| %>
+      <%  post = favorite.post %>
+      <!-- <h3><a href="/posts/<%=post.id%>"><%=post.title%></h3> -->
+      <table>
+        <tr>
+          <td colspan='5'><input class="checkbox" type="checkbox" name="option" value="<%= post.id %>" checked><a href="/posts/<%= post.id %>"><%=post.title%></a></td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
 </div>
 
 <div class="dashboard">
   <%= erb :_dashboard %>
 </div>
+
