@@ -15,3 +15,15 @@ Activerecord validations on all models
 Javascript validations on Login/Signup
 
 Create menu of icons for validated user navigation
+
+## Open Debugging Issues
+
+Upon acct creation, direct to all posts
+
+Properly link edit and delete icons to 'U' and 'D'
+
+Scroll bar not working for autocomplete on tags for editting
+
+Account Dashboard - Display reading list based on favorites
+
+
