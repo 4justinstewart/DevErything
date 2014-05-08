@@ -1,6 +1,6 @@
 .container {
   margin: 20px auto;
-  width: 600px;
+  width: 700px;
   padding: 20px;
   border: 1px dotted black;
   border-radius: 5px;
@@ -62,6 +62,9 @@ h3 {
   margin-left: 20px;
 }
 
+.update {
+  width: 50px;
+}
 form {
 }
 
@@ -144,9 +147,9 @@ td a {
   font-size: 16px;
 }
 
+
 .vote {
-  width: 30px;
-  color: red;
+  width: 30px;  
 }
 
 .resource_col {

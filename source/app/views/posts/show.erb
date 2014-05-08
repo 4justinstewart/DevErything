@@ -1,8 +1,13 @@
 <div class='container'>
-  <h1><a href="http://<%= @post.url %>"><%= @header %></a></h1>
+  <%= erb :_nav %>
   <p><%= @post.content %></p>
-  <a href="#"><img class="vote" src="/down_arrow.svg"></a>
-  <a href="#"><img class="vote" src="/up_arrow.svg"></a>
+  <% if current_user.posts.include?(@post) %>  
+    <a href="#"><img class="update" src="/pencil.svg"></a>
+    <a href="#"><img class="update" src="/trash.svg"></a>
+  <% else %>
+    <a href="#"><img class="vote" src="/down_arrow.svg"></a>
+    <a href="#"><img class="vote" src="/up_arrow.svg"></a>
+  <% end %>
 </div>
 
   
