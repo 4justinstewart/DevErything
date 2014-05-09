@@ -7,8 +7,8 @@
     <a href='/users/<%=session[:user_id]%>/posts/<%= @post.id %>/update'><img class="update" src="/pencil.svg"></a>
     <a href="/posts/<%= @post.id %>/delete"><img class="update" src="/trash.svg"></a>
   <% else %>
-    <img class="vote" src="/down_arrow.svg">
-    <img class="vote" src="/up_arrow.svg">
+    <img style="cursor: pointer" class="vote" src="/down_arrow.svg">
+    <img style="cursor: pointer" class="vote" src="/up_arrow.svg">
   <% end %>
 </div>
 

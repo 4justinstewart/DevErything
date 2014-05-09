@@ -1,6 +1,6 @@
 $(document).ready(function() {
   console.log("this works");
-  $(".checkbox").click(function(e){
+  $(".checkbox").on("click", function(e){
 
     var postID = $(this).val(); //can't use the .checkbox to get post_id => jquery will go find arbitray checkbox(all same class) so instead use $(this)
 
