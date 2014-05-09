@@ -5,15 +5,17 @@ User.create(email: "me@example.com", password: "hello")
 
 tags = %w(API Ruby Object-Oreinted Parsing CSV Nokogiri HTTP Javascript CoffeeScript SQL ActiveRecord Rails Migrations Associations Validations, Method Class RoR Node JQuery Pairing Mentoring Meetup Networking HTML CSS Plugin Array Hash Enumerable Kernel Documentation Syntax ErrorHandling Exception Variable String Integer Number Blocks Procs Lambdhas Regex Conditional Operator Session CRUD Params Routes MVC View Controller Model Sinatra EngineeringEmpathy Database ORM LinkedList Stack Recursive Algorithms SaSS Gem)
 
+tags.each do |tag|
+  Tag.create(name: tag)
+end
+
 categories = %w(Articles Docs Repos CheatSheets eBooks Videos)
+
 categories.each do |cat|
   Category.create(name: cat)
 end
 
-20.times do
-  @name = Faker::Lorem.word
-  Tag.create(name: @name)
-end
+# -------------------------FAKER DOCUMENTATION-----------------------
 
 60.times do
   title = Faker::Lorem.sentence(1).titleize.gsub!('.', '')
