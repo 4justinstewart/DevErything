@@ -3,19 +3,22 @@
   <form id="search_form">
     <input id="search_input" type="text" placeholder="search" name="search">
   </form>
-  <% @categories.each do |cat| %>
-    <div class="resource_col">
-      <h2><%= cat.name %></h2>
-      <% cat.posts.each do |post| %>
-        <table>
-          <tr>
-            <td colspan='5'><input class="checkbox" type="checkbox" name="option" value="<%= post.id %>" <%= is_favorite(post.id, current_user.id) %>><a href="/posts/<%= post.id %>"><%=post.title%></a></td>
-          </tr>
-        </table>
-      <% end %>
-    </div>
-  <% end %>
+  <div class="smaller_container">
+    <% @categories.each do |cat| %>
+      <div class="resource_col" id="cat<%= cat.id %>">
+        <h2><%= cat.name %></h2>
+        <% cat.posts.each do |post| %>
+          <table>
+            <tr>
+              <td colspan='5'><input class="checkbox" type="checkbox" name="option" value="<%= post.id %>" <%= is_favorite(post.id, current_user.id) %>><a href="/posts/<%= post.id %>"><%=post.title%></a></td>
+            </tr>
+          </table>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
 </div>
+
 <div class="dashboard">
   <%= erb :_dashboard %>
 </div>

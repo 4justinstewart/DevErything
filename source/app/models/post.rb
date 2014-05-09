@@ -17,7 +17,7 @@ class Post < ActiveRecord::Base
       cat_id = post.category.id
       post.taggings.each do |tagging|
         if tagging.tag_id == tag_id
-          hash_cats[post.category.id] = {post.id => post.title}
+          hash_cats[post.category.name] = {post.id => post.title}
         end
       end
     end
