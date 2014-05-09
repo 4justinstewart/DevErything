@@ -36,7 +36,7 @@ div[class*='resource'] {
 }
 
 div[class^='all_resource'] {
-  display: inline-block;
+  display: none;
   width: 475px;
 }
 

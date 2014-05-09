@@ -1,13 +1,15 @@
 $(function() {
-  $('[class^="all_resource"]').hide();
+  // $('[class^="all_resource"]').hide();
 
   $('[id= "img0"]').on("click", function() {
     var loserPosts = $('.all_resource0').html()
     $('.resource_col0').append(loserPosts);
   });
 
-  $('[id= "img1"]').on("click", function() {
-    $('.resource_col1, .all_resource1').toggle(5);
+  $('[id= "img1"]').toggle(function() {
+    $('.resource_col1').append('.all_resource1');
+  }, function() {
+    $('.resource_col1').detach('.all_resource1');
   });
 
   $('[id= "img2"]').on("click", function() {
@@ -25,4 +27,5 @@ $(function() {
   $('[id= "img5"]').on("click", function() {
     $('.resource_col5, .all_resource5').toggle(5);
   });
+
 });

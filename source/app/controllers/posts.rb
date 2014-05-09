@@ -26,6 +26,7 @@ get '/users/:user_id/posts' do  # erb file contains button to see all posts
 end
 
 get '/users/:user_id/posts/new' do  # make a new post (HTML form view)
+  @header = "Post a New Resource"
   @categories = Category.all
   erb :'posts/create'
 end

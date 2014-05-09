@@ -1,5 +1,5 @@
 <div class='container'>
-  <h1>Post a New Resource</h1>
+  <%= erb :_nav %>
   <form action='/posts' method='post'>
     <input type="hidden" name="post[user_id]" value="<%=session[:user_id]%>"/>
     <h2><input type='text' placeholder="<%= @title_error ||= "Title" %>" name='post[title]' required/></h2>
