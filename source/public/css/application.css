@@ -87,7 +87,7 @@ div[class*='resource'] {
 }
 
 .dashboard_col {
-  width: 400px;
+  width: 800px;
   display: inline-block;
   margin-left: 100px;
 }
