@@ -10,6 +10,7 @@ $(function() {
   //   $('.resource_col1, .all_resource1').toggle(5);
   // });
 
+
   // $('[id= "img2"]').on("click", function() {
   //   $('.resource_col2, .all_resource2').toggle(5);
   // });
@@ -44,15 +45,6 @@ $(function() {
 });
 
   })
-
-
-
-
-
-  // $("#img1").on("click", function(){
-  //   console.log("clicking on img 1");
-  //   $(".resrouce_col").show(".all_resource");
-  // })
 
 
 });
