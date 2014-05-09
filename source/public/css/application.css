@@ -5,15 +5,6 @@
   overflow-x: hidden;
 }
 
-#home {
-  margin: 20px auto;
-  width: 700px;
-  height: auto;
-  padding: 20px;
-  border: 1px dotted black;
-  border-radius: 5px;
-  background-image: url('/dbc.jpg');
-}
 .container {
   margin: 20px auto;
   width: 700px;
@@ -40,9 +31,30 @@
   padding: 25px 15px;
 }
 
+#home {
+  margin: 20px auto;
+  width: 700px;
+  height: 500px;
+  padding: 20px;
+  border: 1px dotted black;
+  border-radius: 5px;
+  background-image: url('/dbc.jpg');
+}
+
+#home h1 {
+  font-family: Helvetica, sans-serif;
+  color: white;
+}
+
+#home form {
+  margin-top: 40px;
+}
+
+#home input {}
+
 div[class*='resource'] {
   width: 475px;
-  display: inline-block;
+  /*display: inline-block;*/
 }
 
 div[class^='all_resource'] {

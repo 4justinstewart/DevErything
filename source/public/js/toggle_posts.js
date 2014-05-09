@@ -29,6 +29,7 @@ $(function() {
 
   // $(".show_loser").detach();
   // $(".show_loser").hide();
+  $('.show_loser').css({display: "none"});
 
   $('.image').on("click", function(){
     console.log("oh hai");
@@ -39,9 +40,9 @@ $(function() {
     // showLoser.show();
     // console.log($(this).parent().children(".show_loser").show().;
   showLoser.toggle(function () {
-    $("showLoser").css({display: "none"});
+    $("showLoser").show();
 }, function () {
-    $("showLoser").css({display: "inline-block"});
+    $("showLoser").hide();
 });
 
   })
