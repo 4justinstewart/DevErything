@@ -47,9 +47,11 @@ post '/search' do
   p tag
   puts "THIS IS TAG ID"
   tag_id = tag.id
-  hash = Post.get_posts_with_tag(tag_id)
+  hash = Post.get_posts_with_tag(tag_id, current_user.id)
   puts "HASH OF POSTS OF TAG BY CATEGORY"
   p hash
+
+  # is_favorite()
 
   return hash.to_json
 end
