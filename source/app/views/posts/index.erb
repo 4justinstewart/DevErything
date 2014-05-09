@@ -1,7 +1,7 @@
 <div class="large_container">
   <%= erb :_nav %><br>
   <form id="search_form">
-    <input size="37px" id="search_input" type="text" placeholder="search" name="search">
+    <input id="search_input" type="text" placeholder="Search By Tags" name="search">
   </form>
   <% counter = 0 %>
   <div class="smaller_container">
@@ -21,7 +21,7 @@
           <% if (get_loser_posts(cat)).empty? != true %>
             <% get_loser_posts(cat).each do |loser_post| %>
 
-                <span><input class="checkbox" type="checkbox" name="option" value="<%= loser_post.id %>" <%= is_favorite(loser_post.id, current_user.id) %>><a style="color:red" href="/posts/<%= loser_post.id %>"><%=loser_post.title%></a></span>
+                <span><input class="checkbox" type="checkbox" name="option" value="<%= loser_post.id %>" <%= is_favorite(loser_post.id, current_user.id) %>><a href="/posts/<%= loser_post.id %>"><%=loser_post.title%></a></span>
 
             <% end %>
           <% end %>

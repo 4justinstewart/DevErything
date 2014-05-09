@@ -64,6 +64,7 @@ post '/posts' do
 end
 
 get '/users/:user_id/posts/:id/update' do
+  @header = "Edit your Post"
   @categories = Category.all
   @post = Post.find(params[:id])
   @tags = @post.tags

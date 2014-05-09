@@ -18,11 +18,11 @@ $(function(){
     });
 
 
-    $(document).keydown(function(e){ //search engine responsive on enter
-      if (e.keyCode === 13){
-        $("#search_form").trigger("submit");
-      }
-    })
+    // $(document).keydown(function(e){ //search engine responsive on enter
+    //   if (e.keyCode === 13){
+    //     $("#search_form").trigger("submit");
+    //   }
+    // })
 
 
      $("#search_form").submit(function(event){
