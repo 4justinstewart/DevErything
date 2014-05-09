@@ -10,7 +10,7 @@
       <div class="resource_col<%= counter %>" id="cat<%= cat.id %>">
         <h2><%= cat.name %></h2>
         <img id="img<%= counter %>" src="/posts.svg" alt="All Posts"/>
-        <% Post.sort_by_votes(cat).slice(0..9).each do |post| %>
+        <% get_popular_posts(cat).each do |post| %>
           <table>
             <tr>
               <td colspan='5'><input class="checkbox" type="checkbox" name="option" value="<%= post.id %>" <%= is_favorite(post.id, current_user.id) %>><a href="/posts/<%= post.id %>"><%=post.title%></a></td>
@@ -19,13 +19,13 @@
         <% end %>
       </div>
 
-      <div class="all_resource<%= counter %>">
+      <div class="all_resource<%= counter %>" id="cat<%= cat.id %>">
         <h2><%= cat.name %></h2>
         <img id="img<%= counter %>" src="/posts.svg" alt="All Posts"/>
-        <% Post.sort_by_votes(cat).each do |post| %>
+        <% get_loser_posts(cat).each do |post| %>
           <table>
             <tr>
-              <td colspan='5'><a href="/posts/<%= post.id %>"><%=post.title%></a></td>
+              <td colspan='5'><input class="checkbox" type="checkbox" name="option" value="<%= post.id %>" <%= is_favorite(post.id, current_user.id) %>><a href="/posts/<%= post.id %>"><%=post.title%></a></td>
             </tr>
           </table>
         <% end %>
