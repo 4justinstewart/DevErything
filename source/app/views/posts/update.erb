@@ -1,9 +1,9 @@
 <div class='container'>
-  <h1>Edit your post</h1>
+  <%= erb :_nav %>
   <form action='/posts/<%= @post.id %>' method='post'>
     <input type='hidden' name='_method' value='patch'>
     <h2><input type='text' placeholder='Title' name='post[title]' value='<%= @post.title %>'/></h2>
-    <select name="post[category_id]">
+    <select style="margin-bottom: 25px;" name="post[category_id]">
       <% @categories.each do |cat| %>
         <option value="<%= cat.id %>"><%= cat.name %></option>
       <% end %>
