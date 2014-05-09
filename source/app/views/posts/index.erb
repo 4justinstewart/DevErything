@@ -9,27 +9,27 @@
 <!-- issue below -->
       <div class="resource_col<%= counter %>" id="cat<%= cat.id %>">
         <h2><%= cat.name %></h2>
-        <img id="img<%= counter %>" src="/posts.svg" alt="All Posts"/>
+        <img class="image" src="/posts.svg" alt="All Posts"/>
         <% get_popular_posts(cat).each do |post| %>
           <table>
             <tr>
               <td colspan='5'><input class="checkbox" type="checkbox" name="option" value="<%= post.id %>" <%= is_favorite(post.id, current_user.id) %>><a href="/posts/<%= post.id %>"><%=post.title%></a></td>
             </tr>
-          </table>
         <% end %>
+        </table>
+          <div class="show_loser">
+          <% if (get_loser_posts(cat)).empty? != true %>
+            <% get_loser_posts(cat).each do |loser_post| %>
+
+                <span><input class="checkbox" type="checkbox" name="option" value="<%= loser_post.id %>" <%= is_favorite(loser_post.id, current_user.id) %>><a style="color:red" href="/posts/<%= loser_post.id %>"><%=loser_post.title%></a></span>
+
+            <% end %>
+          <% end %>
+          </div>
+
       </div>
 
-      <div class="all_resource<%= counter %>" id="cat<%= cat.id %>">
-        <h2><%= cat.name %></h2>
-        <img id="img<%= counter %>" src="/posts.svg" alt="All Posts"/>
-        <% get_loser_posts(cat).each do |post| %>
-          <table>
-            <tr>
-              <td colspan='5'><input class="checkbox" type="checkbox" name="option" value="<%= post.id %>" <%= is_favorite(post.id, current_user.id) %>><a href="/posts/<%= post.id %>"><%=post.title%></a></td>
-            </tr>
-          </table>
-        <% end %>
-      </div>
+
 
       <% counter += 1 %>
     <% end %>
