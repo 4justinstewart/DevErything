@@ -11,6 +11,11 @@ get '/posts' do
   erb :'posts/index'
 end
 
+get '/posts/all' do
+  redirect to '/posts'
+
+end
+
 get '/users/:user_id/posts' do  # erb file contains button to see all posts
   @header = "Dashboard"
   @button_route = "/posts"

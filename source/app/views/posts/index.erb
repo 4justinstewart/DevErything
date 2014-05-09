@@ -2,30 +2,35 @@
   <%= erb :_nav %>
   <% counter = 0 %>
   <% @categories.each do |cat| %>
+
     <div class="resource_col<%= counter %>">
       <h2><%= cat.name %></h2>
       <img id="img<%= counter %>" src="/posts.svg" alt="All Posts"/>
-      <% if @params == counter.to_s %>
-        <% Post.sort_by_votes(cat).each do |post| %>
-          <table>
-            <tr>
-              <td colspan='5'><a href="/posts/<%= post.id %>"><%=post.title%></a></td>
-            </tr>
-          </table>
-        <% end %>
-      <% else %>
-        <% Post.sort_by_votes(cat).slice(0..9).each do |post| %>
-          <table>
-            <tr>
-              <td colspan='5'><a href="/posts/<%= post.id %>"><%=post.title%></a></td>
-            </tr>
-          </table>
-        <% end %>
+      <% Post.sort_by_votes(cat).slice(0..9).each do |post| %>
+        <table>
+          <tr>
+            <td colspan='5'><a href="/posts/<%= post.id %>"><%=post.title%></a></td>
+          </tr>
+        </table>
       <% end %>
     </div>
+
+    <div class="all_resource<%= counter %>">
+      <h2><%= cat.name %></h2>
+      <img id="img<%= counter %>" src="/posts.svg" alt="All Posts"/>
+      <% Post.sort_by_votes(cat).each do |post| %>
+        <table>
+          <tr>
+            <td colspan='5'><a href="/posts/<%= post.id %>"><%=post.title%></a></td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+
     <% counter += 1 %>
   <% end %>
 </div>
+
 <div class="dashboard">
 <%= erb :_dashboard %>
 </div>
