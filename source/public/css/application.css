@@ -32,7 +32,14 @@
   margin-bottom: 10px;
 }
 
-nav {
+.resource_col img {
+  width: 30px;
+  margin-left: 10px;
+
+}
+
+.resource_col h2 {
+  display: inline-block;
 }
 
 h1{
@@ -147,9 +154,12 @@ td a {
   font-size: 16px;
 }
 
+.resource_col img  {
+  width: 30px;
+}
 
 .vote {
-  width: 30px;  
+  width: 30px;
 }
 
 .resource_col {
@@ -158,9 +168,6 @@ td a {
   margin: 0 5px;
 }
 
-.resource_col h2 {
-  text-align: center;
-}
 
 .resource_col a:visited {
   color: #5d757e;
