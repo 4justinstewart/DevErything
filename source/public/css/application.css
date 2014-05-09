@@ -22,8 +22,16 @@
   position: fixed;
   top: 20px;
   padding: 25px 15px;
+}
 
+div[class*='resource'] {
+  width: 475px;
+  display: inline-block;
+}
 
+div[class^='all_resource'] {
+  display:none;
+  width: 475px;
 }
 
 .dashboard img {
@@ -32,7 +40,14 @@
   margin-bottom: 10px;
 }
 
-nav {
+div[class*='resource'] img {
+  width: 30px;
+  margin-left: 10px;
+
+}
+
+div[class*='resource'] h2 {
+  display: inline-block;
 }
 
 h1{
@@ -147,9 +162,12 @@ td a {
   font-size: 16px;
 }
 
+.resource_col img  {
+  width: 30px;
+}
 
 .vote {
-  width: 30px;  
+  width: 30px;
 }
 
 .resource_col {
@@ -158,9 +176,6 @@ td a {
   margin: 0 5px;
 }
 
-.resource_col h2 {
-  text-align: center;
-}
 
 .resource_col a:visited {
   color: #5d757e;
