@@ -42,7 +42,7 @@
 
 div[class*='resource'] {
   width: 475px;
-  display: inline-block;
+  /*display: inline-block;*/
 }
 
 div[class^='all_resource'] {
