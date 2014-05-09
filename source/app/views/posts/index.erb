@@ -1,5 +1,8 @@
 <div class="large_container">
   <%= erb :_nav %>
+  <form id="search_form">
+    <input id="search_input" type="text" placeholder="search" name="search">
+  </form>
   <% @categories.each do |cat| %>
     <div class="resource_col">
       <h2><%= cat.name %></h2>

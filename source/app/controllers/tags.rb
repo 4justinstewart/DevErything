@@ -36,3 +36,30 @@ delete '/photos/:id' do
 
 
 end
+
+#-----------------------adding search function -------------------------
+
+post '/search' do
+  p "THIS IS HAPPENING"
+  p params[:tag]
+  name = params[:tag]
+  tag = Tag.find_by_name(name)
+  p tag
+  puts "THIS IS TAG ID"
+  tag_id = tag.id
+  hash = Post.get_posts_with_tag(tag_id)
+  puts "HASH OF POSTS OF TAG BY CATEGORY"
+  p hash
+
+  return hash.to_json
+end
+
+
+
+
+
+
+
+
+
+
