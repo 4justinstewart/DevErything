@@ -1,41 +1,39 @@
 <div class="large_container">
-  <%= erb :_nav %><br>
+  <%= erb :_nav %>
   <form id="search_form">
     <input id="search_input" type="text" placeholder="Search By Tags" name="search">
   </form>
-  <% counter = 0 %>
+
   <div class="smaller_container">
     <% @categories.each do |cat| %>
-<!-- issue below -->
-      <div class="resource_col<%= counter %>" id="cat<%= cat.id %>">
+      <div class="resource_col" id="cat<%= cat.id %>">
         <h2><%= cat.name %></h2>
-        <img class="image" src="/posts.svg" alt="All Posts"/>
+        <img class="image" src="/images/posts.svg" alt="All Posts"/>
         <% get_popular_posts(cat).each do |post| %>
           <table>
             <tr>
-              <td colspan='5'><input class="checkbox" type="checkbox" name="option" value="<%= post.id %>" <%= is_favorite(post.id, current_user.id) %>><a href="/posts/<%= post.id %>"><%=post.title%></a></td>
+              <td colspan='5'>
+                <input class="checkbox" type="checkbox" name="option" value="<%= post.id %>" <%= is_favorite(post.id, current_user.id) %>>
+                <a href="/posts/<%= post.id %>"><%=post.title%></a>
+              </td>
             </tr>
+          </table>
         <% end %>
-        </table>
-          <div class="show_loser">
+
+        <div class="show_loser">
           <% if (get_loser_posts(cat)).empty? != true %>
             <% get_loser_posts(cat).each do |loser_post| %>
-
-                <span><input class="checkbox" type="checkbox" name="option" value="<%= loser_post.id %>" <%= is_favorite(loser_post.id, current_user.id) %>><a href="/posts/<%= loser_post.id %>"><%=loser_post.title%></a></span>
-
+              <span>
+                <input class="checkbox" type="checkbox" name="option" value="<%= loser_post.id %>" <%= is_favorite(loser_post.id, current_user.id) %>>
+                <a href="/posts/<%= loser_post.id %>"><%=loser_post.title%></a>
+              </span>
             <% end %>
           <% end %>
-          </div>
-
+        </div>
       </div>
-
-
-
-      <% counter += 1 %>
     <% end %>
+
   </div>
 </div>
 
-<div class="dashboard">
-  <%= erb :_dashboard %>
-</div>
+<%= erb :_dashboard %>

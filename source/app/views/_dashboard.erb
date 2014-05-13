@@ -1,5 +1,7 @@
 <% if current_user %>
-    <a href="/users/<%=session[:user_id]%>/posts/new"><img src="/compose.svg" alt="Compose Post"></a>
-    <a href="/users/<%=session[:user_id]%>/posts"><img src="/account.svg" alt="Go to Dashboard"></a>
-    <a href='/signout'><img src="/logout.svg" alt="Logout"></a>  
+  <div class="dashboard">
+    <a href="/users/<%=session[:user_id]%>/posts/new"><img src="/images/compose.svg" alt="Compose Post"></a>
+    <a href="/users/<%=session[:user_id]%>/posts"><img src="/images/account.svg" alt="Go to Dashboard"></a>
+    <a href='/signout'><img src="/images/logout.svg" alt="Logout"></a>
+  </div>
 <% end %>

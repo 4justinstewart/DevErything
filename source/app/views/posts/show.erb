@@ -4,11 +4,15 @@
   <h3><%= @post.content %></h3>
 
   <% if current_user.posts.include?(@post) %>
-    <div class="tools"><a href='/users/<%=session[:user_id]%>/posts/<%= @post.id %>/update'><img class="update" src="/pencil.svg"></a>
-    <a href="/posts/<%= @post.id %>/delete"><img class="update" src="/trash.svg"></a></div>
+    <div class="tools">
+      <a href='/users/<%=session[:user_id]%>/posts/<%= @post.id %>/update'><img class="update" src="/images/pencil.svg"></a>
+      <a href="/posts/<%= @post.id %>/delete"><img class="update" src="/images/trash.svg"></a>
+    </div>
   <% else %>
-    <div class="tools"><img style="cursor: pointer;" class="vote" src="/down_arrow.svg">
-    <img style="cursor: pointer;" class="vote" src="/up_arrow.svg"></div>
+    <div class="tools">
+      <img style="cursor: pointer;" class="vote" src="/images/down_arrow.svg">
+      <img style="cursor: pointer;" class="vote" src="/images/up_arrow.svg">
+    </div>
   <% end %>
 </div>
 
@@ -18,8 +22,6 @@
     <a href='/tags/<%= tag.id %>'><%= tag.name %></a>
   <% end %>
 </div>
+<%= erb :_dashboard %>
 
-<div class="dashboard">
-  <%= erb :_dashboard %>
-</div>
 
