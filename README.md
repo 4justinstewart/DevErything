@@ -16,4 +16,6 @@ Javascript validations on Login/Signup
 
 ## Open Debugging Issues
 
+Allowed to vote on post more than once by leaving page and coming back to it.
+
 Search bar returns only the first result of each page.
