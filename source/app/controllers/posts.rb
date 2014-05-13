@@ -1,10 +1,7 @@
 enable :sessions
 
 get '/posts' do
-  p params
   @params = params[:id]
-  p @params == "0"
-
   @header = "Resource HQ"
   @posts = Post.all
   @categories = Category.all
@@ -13,7 +10,6 @@ end
 
 get '/posts/all' do
   redirect to '/posts'
-
 end
 
 get '/users/:user_id/posts' do  # erb file contains button to see all posts

@@ -17,9 +17,7 @@ post '/signin' do
 end
 
 get '/signup' do
-
   erb :'users/create_account'
-
 end
 
 post '/signup' do

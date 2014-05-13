@@ -18,7 +18,7 @@ get '/tags/:id' do
   @tag = Tag.find(params[:id])
   @tag_name = @tag.name.gsub(',', '').upcase
   @posts = @tag.posts
-  erb :posts_by_tag
+  erb :'posts/posts_by_tag'
 end
 
 

@@ -9,7 +9,7 @@
   margin: 20px auto;
   width: 700px;
   padding: 20px;
-  border: 1px dotted black;
+  border: 1px solid black;
   border-radius: 5px;
   background-color: #a2c0cc;
 }
@@ -18,17 +18,19 @@
   margin: 20px auto;
   width: 1000px;
   padding: 20px;
-  border: 1px dotted black;
+  border: 1px solid black;
   border-radius: 5px;
   background-color: #a2c0cc;
 }
 
 .dashboard {
   border: 1px solid black;
+  border-radius: 5px;
   display: inline-block;
   position: fixed;
   top: 20px;
   padding: 25px 15px;
+  background-color: #c3ced2;
 }
 
 #home {
@@ -37,13 +39,16 @@
   height: 600px;
   padding: 20px;
   border: 1px dotted black;
-  border-radius: 5px;
-  background-image: url('/dbc.jpg');
+  border-radius: 10px;
+  background-image: url('/images/dbc.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #home h1 {
   font-family: Helvetica, sans-serif;
   color: white;
+  margin-top: 60px;
 }
 
 #home form {
@@ -71,8 +76,9 @@
   color: white;
   font-size: 18px;
 }
+
 #search_form {
-  margin-left: 80px;
+  margin: 25px 0 0 80px;
 }
 
 #search_form input {
@@ -112,9 +118,9 @@ div[class*='resource'] td input {
   margin-right: 20px;
 }
 
-div[class*='resource'] td input:checked {
+/*div[class*='resource'] td input:checked {
   background-color: yellow;
-}
+}*/
 
 .show_loser span{
   display: block;
@@ -209,10 +215,6 @@ button {
   margin: 10px 20px;
 }
 
-/*td {
-
-}*/
-
 #dbc {
   width: 30%;
   margin: 5% 2% 0 0;
@@ -272,53 +274,4 @@ button img {
   width: 40px;
   margin-right: 25px;
 }
-
-
-td a {
-  /*border: 1px solid black;
-  text-decoration: none;
-
-}
-/*
-.title {
-  width: 100%;
-}*/
-
-.details {
-  font-size: 16px;
-}
-
-.resource_col img  {
-  width: 30px;
-}
-
-.vote {
-  width: 30px;
-}
-
-.resource_col {
-  width: 32%;
-  display: inline-block;
-  margin: 0 5px;
-}
-
-
-
-.dashboard {
-  border-top:3px solid #d9e5ea;
-  margin-top: 30px;
-  padding-top: 30px;
-  text-align: center;
-}*/
-
-header {
-  display: inline;
-  position: absolute;
-  top:0;
-}
-
-header img {
-  width: 5%;
-}
-
 

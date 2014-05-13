@@ -14,7 +14,6 @@ post "/votes" do  #CREATE VOTE OBJ.
     upvote: params[:upvote],
     downvote: params[:downvote]
   )
-
   "200"
 end
 

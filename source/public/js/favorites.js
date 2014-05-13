@@ -7,12 +7,12 @@ $(document).ready(function() {
     if($(this).is(':checked')){ //have to use $this here for the same reason
       console.log("something is checked");
       console.log(postID);
-      var favorite = "true"
+      var favorite = "true";
     }
     else{
       console.log("unchecked");
       console.log(postID);
-      var favorite = "false"
+      var favorite = "false";
     }
 
       $.ajax({
@@ -22,15 +22,8 @@ $(document).ready(function() {
         success: function(response){
           console.log(response);
         }
-      })
-
-
-      // e.preventDefault(); DONT
+      });
   });
-
-
-
-
 });
 
 
