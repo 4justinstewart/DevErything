@@ -44,11 +44,7 @@ post '/search' do
   name = params[:tag]
   tag = Tag.find_by_name(name)
   tag_id = tag.id
-  hash = Post.get_posts_with_tag(tag_id, current_user.id)
-  puts "HASH OF POSTS OF TAG BY CATEGORY"
-  p hash
-
-  # is_favorite()
+  hash = Post.find_all_posts_by_tag(tag_id, current_user.id)
 
   return hash.to_json
 end
