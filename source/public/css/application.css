@@ -69,7 +69,6 @@
 #home h3 {
   color: white;
   font-size: 20px;
-
 }
 
 #home button {
@@ -85,14 +84,12 @@
 #search_form input {
   width: 400px;
   height: 45px;
-  /*border-radius: 5px;*/
   margin-bottom: 30px;
   font-size: 24px;
 }
 
 div[class*='resource'] {
   margin-left: 100px;
-  /*display: inline-block;*/
 }
 
 input[type='checkbox'] {

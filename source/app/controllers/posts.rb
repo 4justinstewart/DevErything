@@ -32,6 +32,7 @@ get '/posts/:id' do
   @header = @post.title
   @source = @post.url
   @tags = @post.tags
+  @post_vote = current_user.votes.find_by_post_id(@post.id)
   erb :'posts/show'
   #show a particular post, to READ, UPDATE (button), or DELETE (button)
 end

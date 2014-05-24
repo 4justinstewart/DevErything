@@ -9,10 +9,12 @@
       <a href="/posts/<%= @post.id %>/delete"><img class="update" src="/images/trash.svg"></a>
     </div>
   <% else %>
-    <div class="tools">
-      <img style="cursor: pointer;" class="vote" src="/images/down_arrow.svg">
-      <img style="cursor: pointer;" class="vote" src="/images/up_arrow.svg">
-    </div>
+    <% unless @post_vote %>
+      <div class="tools">
+        <img style="cursor: pointer;" class="vote" src="/images/up_arrow.svg">
+        <img style="cursor: pointer;" class="vote" src="/images/down_arrow.svg">
+      </div>
+    <% end %>
   <% end %>
 </div>
 
