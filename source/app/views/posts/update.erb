@@ -1,5 +1,5 @@
 <div class='container'>
-  <%= erb :_nav %>
+  <%= erb :_nav %><br>
   <form action='/posts/<%= @post.id %>' method='post'>
     <input type='hidden' name='_method' value='patch'>
     <h2><input type='text' placeholder='Title' name='post[title]' value='<%= @post.title %>'/></h2>
@@ -12,7 +12,7 @@
     <textarea name='post[content]' cols="60" rows="5" placeholder="Post Content"><%= @post.content %></textarea><br><br>
     <textarea class="tags_input" name='tagnames' cols="60" rows="2" placeholder="List tags separated by commas"><% @tags.each do |tag| %><%= tag.name %>, <% end %></textarea><br><br>
     <button type='submit'>Update</button>
-  </form
+  </form>
 </div>
 
 <%= erb :_dashboard %>
