@@ -121,9 +121,6 @@ div[class*='resource'] td input {
   margin-right: 20px;
 }
 
-/*div[class*='resource'] td input:checked {
-  background-color: yellow;
-}*/
 
 .show_loser span{
   display: block;
@@ -151,6 +148,10 @@ div[class*='resource'] td input {
 div[class*='resource'] img {
   width: 30px;
   margin-left: 10px;
+}
+
+img[alt^='All'] {
+  cursor: pointer;
 }
 
 div[class*='resource'] h2 {
