@@ -1,7 +1,7 @@
 <div class='container'>
   <%= erb :_nav %>
   <input type="hidden" name="post_id" value="<%= @post.id %>"/>
-  <h3><%= @post.content %></h3>
+  <h2 id="vote_total">Vote Total: <%= @vote_total %></h2>
 
   <% if current_user.posts.include?(@post) %>
     <div class="tools">
@@ -9,19 +9,18 @@
       <a href="/posts/<%= @post.id %>/delete"><img class="update" src="/images/trash.svg"></a>
     </div>
   <% else %>
-    <% unless @post_vote %>
       <div class="tools">
+    <% unless @post_vote %>
         <img style="cursor: pointer;" class="vote" src="/images/up_arrow.svg">
         <img style="cursor: pointer;" class="vote" src="/images/down_arrow.svg">
-      </div>
     <% end %>
+      </div>
   <% end %>
-</div>
-
-<div class='container'>
+  <h2>Post Description:</h2>
+  <h3><%= @post.content %></h3>
   <h2>Tags associated with this post:</h2>
   <% @tags.each do |tag| %>
-    <a href='/tags/<%= tag.id %>'><%= tag.name %></a>
+    <span><a href='/tags/<%= tag.id %>'><%= tag.name %></a></span>
   <% end %>
 </div>
 <%= erb :_dashboard %>

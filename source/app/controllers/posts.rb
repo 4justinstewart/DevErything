@@ -33,8 +33,8 @@ get '/posts/:id' do
   @source = @post.url
   @tags = @post.tags
   @post_vote = current_user.votes.find_by_post_id(@post.id)
+  @vote_total = @post.calculate_vote_total
   erb :'posts/show'
-  #show a particular post, to READ, UPDATE (button), or DELETE (button)
 end
 
 post '/posts' do

@@ -134,9 +134,12 @@ div[class*='resource'] td input {
 
 }
 
-.tools {
-
-  text-align: right;
+.container span {
+  margin-left: 20px;
+}
+#vote_total {
+  display: inline-block;
+  margin-bottom: 15px;
 }
 
 .dashboard img {
