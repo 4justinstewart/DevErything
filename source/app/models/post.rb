@@ -39,6 +39,13 @@ class Post < ActiveRecord::Base
     end
   end
 
+  def calculate_vote_total
+    downvotes = self.votes.where(downvote: true).count
+    upvotes = self.votes.where(upvote: true).count
+    
+    upvotes - downvotes
+  end
+
 
   def self.sort_by_votes(category)
     sorted_by_category = Post.where("category_id = #{category.id}")
