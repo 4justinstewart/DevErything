@@ -7,20 +7,20 @@
 
 .container {
   margin: 20px auto;
-  width: 700px;
+  width: 750px;
   padding: 20px;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: #a2c0cc;
+  background-color: #54a2dc;
 }
 
 .large_container {
   margin: 20px auto;
-  width: 1000px;
+  width: 750px;
   padding: 20px;
   border: 1px solid black;
   border-radius: 5px;
-  background-color: #a2c0cc;
+  background-color: #54a2dc;
 }
 
 .dashboard {
@@ -30,7 +30,7 @@
   position: fixed;
   top: 20px;
   padding: 25px 15px;
-  background-color: #c3ced2;
+  background-color: #b3d5ef;
 }
 
 #home {
@@ -92,6 +92,9 @@ div[class*='resource'] {
   /*display: inline-block;*/
 }
 
+input[type='checkbox'] {
+  border:1px solid black;
+}
 .dashboard_col {
   width: 800px;
   display: inline-block;
@@ -183,16 +186,16 @@ a {
 }
 
 a:visited {
-  color: #5d757e;
+  color: #183951;
 
 }
 
 a:link {
-  color: #5d757e;
+  color: #183951;
 }
 
 a:hover{
-  color: #183a47;
+  color: #d0e5f5;
 }
 
 header h1 {
