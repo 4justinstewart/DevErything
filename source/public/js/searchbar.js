@@ -38,11 +38,11 @@ $(function(){
         data: {tag: searchTag},
         success: function(response){
           var searchObj = JSON.parse(response);
-          console.log(searchObj);
+          // console.log(searchObj);
           Object.keys(searchObj).forEach(function(catKey){
             postObj = searchObj[catKey]
-            console.log(catKey);
-            $('.smaller_container').append("<div id="+catKey+"></div>");
+            console.log("category: " + catKey);
+            $('.smaller_container').append("<div class='resource_col' id="+catKey+"></div>");
             $('#'+catKey+'').append("<h2>"+catKey+"</h2>");
             // Object.keys(postObj).forEach(function(postKey){
               var postKey = postObj[0];
