@@ -10,23 +10,19 @@
         <h2><%= cat.name %></h2>
         <img class="image" src="/images/posts.svg" alt="All Posts"/>
         <% get_popular_posts(cat).each do |post| %>
-          <table>
-            <tr>
-              <td colspan='5'>
-                <input class="checkbox" type="checkbox" name="option" value="<%= post.id %>" <%= is_favorite(post.id, current_user.id) %>>
-                <a href="/posts/<%= post.id %>"><%=post.title%></a>
-              </td>
-            </tr>
-          </table>
+          <p>
+            <input class="checkbox" type="checkbox" name="option" value="<%= post.id %>" <%= is_favorite(post.id, current_user.id) %>>
+            <a href="/posts/<%= post.id %>"><%=post.title%></a>
+          </p>
         <% end %>
 
         <div class="show_loser">
           <% if (get_loser_posts(cat)).empty? != true %>
             <% get_loser_posts(cat).each do |loser_post| %>
-              <span>
+              <p>
                 <input class="checkbox" type="checkbox" name="option" value="<%= loser_post.id %>" <%= is_favorite(loser_post.id, current_user.id) %>>
                 <a href="/posts/<%= loser_post.id %>"><%=loser_post.title%></a>
-              </span>
+              </p>
             <% end %>
           <% end %>
         </div>

@@ -5,24 +5,21 @@
     <% current_user.favorites.each do |favorite| %>
       <%  post = favorite.post %>
       <!-- <h3><a href="/posts/<%=post.id%>"><%=post.title%></h3> -->
-      <table>
-        <tr>
-          <td colspan='5'><input class="checkbox" type="checkbox" name="option" value="<%= post.id %>" checked><a href="/posts/<%= post.id %>"><%=post.title%></a></td>
-        </tr>
-      </table>
+      <p>
+        <input class="checkbox" type="checkbox" name="option" value="<%= post.id %>" checked>
+        <a href="/posts/<%= post.id %>"><%=post.title%></a>
+      </p>
     <% end %>
   </div>
   <div  class="dashboard_col">
     <h2>Manage Your Posts</h2>
     <% @categories.each do |cat| %>
       <h2><%= cat.name %></h2>
-      <table>
+      
         <% cat.posts.where("user_id = #{session[:user_id]}").each do |post| %>
-          <tr>
-            <td><a href="/posts/<%=post.id%>"><%=post.title%></a></td>
-          </tr>
+          <a href="/posts/<%=post.id%>"><%=post.title%></a>
         <% end %>
-      </table>
+      
     <% end %>
   </div>
 </div>

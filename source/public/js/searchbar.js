@@ -27,9 +27,8 @@ $(function(){
 
      $("#search_form").submit(function(event){
       event.preventDefault();
-      console.log("this is submitting");
-      var searchTag = $("#search_input").val();
-      console.log(searchTag);
+      
+      var searchTag = $("#search_input").val().toLowerCase();
       $('.smaller_container').empty();
 
       $.ajax({
@@ -38,24 +37,19 @@ $(function(){
         data: {tag: searchTag},
         success: function(response){
           var searchObj = JSON.parse(response);
-          console.log(searchObj);
-          Object.keys(searchObj).forEach(function(catKey){
-            postObj = searchObj[catKey]
-            console.log(catKey);
-            $('.smaller_container').append("<div id="+catKey+"></div>");
-            $('#'+catKey+'').append("<h2>"+catKey+"</h2>");
-            // Object.keys(postObj).forEach(function(postKey){
-              var postKey = postObj[0];
-              // var postName = postObj[postKey];
-              var postName = postObj[1];
-              var postCheck = postObj[2];
-              console.log("HERE THEY ARE");
-              console.log(postKey);
-              console.log(postName);
-              console.log(postCheck);
-              $('#'+catKey+'').append("<td colspan='5'><input class='checkbox' type='checkbox' name='option' value="+postKey+" "+postCheck+"><a href='/posts/"+postKey+"'>"+postName+"</a></td>");
-              // '<input class="checkbox" type="checkbox" name="option" value='+postKey+' '+postCheck+'>'
 
+          Object.keys(searchObj).forEach(function(catKey){
+            var postObj = searchObj[catKey]
+
+            $('.smaller_container').append("<div class='resource_col' id="+catKey+"></div>");
+            $('#'+catKey+'').append("<h2>"+catKey+"</h2>");   
+            postObj.forEach(function(postInfo){
+              var postKey = postInfo[0];
+              var postName = postInfo[1];
+              var postCheck = postInfo[2];
+            
+              $('#'+catKey+'').append("<p><input class='checkbox' type='checkbox' name='option' value="+postKey+" "+postCheck+"><a href='/posts/"+postKey+"'>"+postName+"</a></p>");
+            });
   //----------------------------------------------------------------------------------
   $(".checkbox").on("click", function(e){
     var postID = $(this).val(); //can't use the .checkbox to get post_id => jquery will go find arbitray checkbox(all same class) so instead use $(this)

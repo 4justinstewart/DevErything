@@ -10,19 +10,24 @@ class Post < ActiveRecord::Base
   has_many :taggings
   has_many :tags, :through => :taggings
 
-  def self.get_posts_with_tag(tag_id, user_id)
-    hash_cats = {}
-    # hash_posts = {}
+  def self.find_all_posts_by_tag(tag_id, user_id)
+
+    posts_with_tag = {}
+    searched_tag = Tag.find(tag_id).name
+
+    Category.all.each do |cat|
+      posts_with_tag[cat.name] = []
+    end 
+
     Post.all.each do |post|
-      cat_id = post.category.id
-      post.taggings.each do |tagging|
-        if tagging.tag_id == tag_id
-          # hash_cats[post.category.name] = {post.id => post.title}
-          hash_cats[post.category.name] = [post.id, post.title, post.is_favorite(user_id)]
+      post_category = Category.find(post.category_id).name
+      post.tags.each do |post_tag|
+        if post_tag.name == searched_tag
+          posts_with_tag[post_category] << [post.id, post.title, post.is_favorite(user_id)]
         end
       end
-    end
-    return hash_cats
+    end 
+    posts_with_tag
   end
 
 #almost exact method exists in helper (not dry)
@@ -32,6 +37,13 @@ class Post < ActiveRecord::Base
     else
       return "checked"
     end
+  end
+
+  def calculate_vote_total
+    downvotes = self.votes.where(downvote: true).count
+    upvotes = self.votes.where(upvote: true).count
+    
+    upvotes - downvotes
   end
 
 
