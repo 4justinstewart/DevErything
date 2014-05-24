@@ -13,7 +13,7 @@ get '/posts/all' do
 end
 
 get '/users/:user_id/posts' do  # erb file contains button to see all posts
-  @header = "Dashboard"
+  @header = "#{current_user.first_name}'s Dashboard"
   @button_route = "/posts"
   @button_text = "See All Resources"
   @posts = current_user.posts

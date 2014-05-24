@@ -1,5 +1,5 @@
 <div class='container'>
-  <%= erb :_nav %><br>
+  <%= erb :_nav %><br><br><br>
   <form action='/posts/<%= @post.id %>' method='post'>
     <input type='hidden' name='_method' value='patch'>
     <h2><input type='text' placeholder='Title' name='post[title]' value='<%= @post.title %>'/></h2>
