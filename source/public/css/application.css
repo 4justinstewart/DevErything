@@ -1,37 +1,5 @@
-.ui-autocomplete {
-  max-height: 300px;
-  overflow-y: auto;
-  /* prevent horizontal scrollbar */
-  overflow-x: hidden;
-}
-
-.container {
-  margin: 20px auto;
-  width: 750px;
-  padding: 20px;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: #54a2dc;
-}
-
-.large_container {
-  margin: 20px auto;
-  width: 750px;
-  padding: 20px;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: #54a2dc;
-}
-
-.dashboard {
-  border: 1px solid black;
-  border-radius: 5px;
-  display: inline-block;
-  position: fixed;
-  top: 20px;
-  padding: 25px 15px;
-  background-color: #b3d5ef;
-}
+/* ------------LANDING PAGE--------------
+----------------------------------------*/
 
 #home {
   margin: 20px auto;
@@ -83,6 +51,42 @@
 #alt_action {
   display: none;
 }
+
+.ui-autocomplete {
+  max-height: 300px;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 20px auto;
+  width: 750px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #54a2dc;
+}
+
+.large_container {
+  margin: 20px auto;
+  width: 750px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #54a2dc;
+}
+
+.dashboard {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: inline-block;
+  position: fixed;
+  top: 20px;
+  padding: 25px 15px;
+  background-color: #b3d5ef;
+}
+
 
 #search_form {
   margin: 25px 0 0 80px;
