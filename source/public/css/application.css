@@ -76,6 +76,14 @@
   font-size: 18px;
 }
 
+#signup {
+  display:none;
+}
+
+#alt_action {
+  display: none;
+}
+
 #search_form {
   margin: 25px 0 0 80px;
   clear:both;
