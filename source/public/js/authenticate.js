@@ -10,7 +10,6 @@ $(function() {
    //  var password = $('input[name="user[password]"]').val();
 
   $('#signup').on('submit', function(e) {
-    // e.preventDefault();
     var firstName = $('input[name="user[first_name]"]').val();
     var lastName = $('input[name="user[last_name]"]').val();
     var email =  $('input[name="user[email]"]').val();
@@ -31,13 +30,15 @@ $(function() {
       $('#errors').append("<li>Password must be 8 characters long</li>");
     }
 
-    // if (given_password.checkCapitalLetter() === false){
-    //   $('#errors').append("<li>Password must have at least 1 capital letter</li>");
-    // }
+    if (given_password.checkCapitalLetter() === false){
+      e.preventDefault();
+      $('#errors').append("<li>Password must have at least 1 capital letter</li>");
+    }
 
-    // if (given_password.checkNumericPresence() === false){
-    //   $('#errors').append("<li>Password must have at least 1 number</li>");
-    // }
+    if (given_password.checkNumericPresence() === false){
+      e.preventDefault();
+      $('#errors').append("<li>Password must have at least 1 number</li>");
+    }
 
   });
 
