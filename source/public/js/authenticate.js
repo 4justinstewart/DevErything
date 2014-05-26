@@ -4,8 +4,13 @@ $(function() {
     $('.auth_button').toggle();
   });
 
-  $('form').on('submit', function(e) {
-    e.preventDefault();
+   // $('#signup').on('submit', function(e) {
+
+   //  var email =  $('input[name="user[email]"]').val();
+   //  var password = $('input[name="user[password]"]').val();
+
+  $('#signup').on('submit', function(e) {
+    // e.preventDefault();
     var firstName = $('input[name="user[first_name]"]').val();
     var lastName = $('input[name="user[last_name]"]').val();
     var email =  $('input[name="user[email]"]').val();
@@ -15,30 +20,31 @@ $(function() {
 
     given_email = new Email(email);
     if (given_email.checkValid() === false){
-      $('#errors').append("<li>Email invalid</li>");
+      e.preventDefault();
+      $('input[name="user[email]"').attr('value', 'Invalid Email').css('background-color', 'pink');
     }
 
-    given_password = new Password(password);
+    // given_password = new Password(password);
 
-    if (given_password.checkLength() === false){
-      $('#errors').append("<li>Password must be 8 characters long</li>");
-    }
+    // if (given_password.checkLength() === false){
+    //   $('#errors').append("<li>Password must be 8 characters long</li>");
+    // }
 
-    if (given_password.checkCapitalLetter() === false){
-      $('#errors').append("<li>Password must have at least 1 capital letter</li>");
-    }
+    // if (given_password.checkCapitalLetter() === false){
+    //   $('#errors').append("<li>Password must have at least 1 capital letter</li>");
+    // }
 
-    if (given_password.checkNumericPresence() === false){
-      $('#errors').append("<li>Password must have at least 1 number</li>");
-    }
+    // if (given_password.checkNumericPresence() === false){
+    //   $('#errors').append("<li>Password must have at least 1 number</li>");
+    // }
 
   });
 
-  $('input').on('keyup', function(e){
-    if (e.keyCode != 13) {
-      $('#errors').empty();
-    }
-  });
+  // $('input').on('keyup', function(e){
+  //   if (e.keyCode != 13) {
+  //     $('form').val('');
+  //   }
+  // });
 
 // -------------------------------LOGIC----------------------------------
 
