@@ -52,6 +52,21 @@
   display: none;
 }
 
+#errors {
+  position: fixed;
+  left: 0;
+  top: 200px;
+  max-width: 10%;
+  list-style-type: none;
+  padding: 15px;
+  display: none;
+  background-color: 
+}
+
+#errors li {
+  padding: 10px;
+}
+
 .ui-autocomplete {
   max-height: 300px;
   overflow-y: auto;

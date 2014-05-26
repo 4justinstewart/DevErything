@@ -16,8 +16,15 @@ $(function() {
     var password = $('input[name="user[password]"]').val();
     var passwordConfirm = $('input[name="confirm_password]"]').val();
 
+    given_name = new Name(firstName, lastName);
+
+    if (given_name.checkPresence() === false){
+      e.preventDefault();
+      $('#errors').append("<li>First and Last Name are required</li>");
+    }
 
     given_email = new Email(email);
+
     if (given_email.checkValid() === false){
       e.preventDefault();
       $('#errors').append("<li>Invalid Email</li>");
@@ -32,7 +39,7 @@ $(function() {
 
     if (given_password.checkCapitalLetter() === false){
       e.preventDefault();
-      $('#errors').append("<li>Password must have at least 1 capital letter</li>");
+      $('#errors').append("<li>Password must have at least 1 capital letter</li>").fadeIn();
     }
 
     if (given_password.checkNumericPresence() === false){
@@ -40,19 +47,32 @@ $(function() {
       $('#errors').append("<li>Password must have at least 1 number</li>");
     }
 
+    $('#errors').toggle(800);
+
   });
 
   $('input').on('keyup', function(e){
     if (e.keyCode != 13) {
-      $('#errors').empty();
+      $('#errors').empty().toggle(400);
     }
   });
 
 // -------------------------------LOGIC----------------------------------
+  
+  function Name(firstname, lastname){
+    this.first = firstname;
+    this.last = lastname;
+  }
+
+  firstName.prototype.checkPresence = function() {
+    if ((this.first === "") || (this.last === "")) {
+      return false;
+    }
+  };
 
   function Email(email){
     this.email = email;
-  };
+  }
 
   Email.prototype.checkValid = function(){
     if ((this.email).match(/^\S+@[A-z0-9]+\.[A-z]{2,}$/) === null){
