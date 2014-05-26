@@ -4,11 +4,6 @@ $(function() {
     $('.auth_button').toggle();
   });
 
-   // $('#signup').on('submit', function(e) {
-
-   //  var email =  $('input[name="user[email]"]').val();
-   //  var password = $('input[name="user[password]"]').val();
-
   $('#signup').on('submit', function(e) {
     var firstName = $('input[name="user[first_name]"]').val();
     var lastName = $('input[name="user[last_name]"]').val();
@@ -30,7 +25,7 @@ $(function() {
       $('#errors').append("<li>Invalid Email</li>");
     }
 
-    given_password = new Password(password);
+    given_password = new Password(password, passwordConfirm);
 
     if (given_password.checkLength() === false){
       e.preventDefault();
@@ -47,13 +42,18 @@ $(function() {
       $('#errors').append("<li>Password must have at least 1 number</li>");
     }
 
-    $('#errors').toggle(800);
+    if (given_password.checkReliability() === false){
+      e.preventDefault();
+      $('#errors').append("<li>Passwords must match one another</li>");
+    }
+
+    // $('#errors').toggle(800);
 
   });
 
   $('input').on('keyup', function(e){
     if (e.keyCode != 13) {
-      $('#errors').empty().toggle(400);
+      $('#errors').empty().hide();
     }
   });
 
@@ -64,7 +64,7 @@ $(function() {
     this.last = lastname;
   }
 
-  firstName.prototype.checkPresence = function() {
+  Name.prototype.checkPresence = function() {
     if ((this.first === "") || (this.last === "")) {
       return false;
     }
@@ -80,8 +80,9 @@ $(function() {
     }
   };
 
-  function Password(password) {
+  function Password(password, confirmpw) {
     this.password = password;
+    this.confirm = confirmpw;
   }
 
   Password.prototype.checkLength = function() {
@@ -101,5 +102,11 @@ $(function() {
       return false;
     }
   };
+
+  Password.prototype.checkReliability = function() {
+    if (this.password != this.confirm) {
+      return false;
+    }
+  }
 
 });

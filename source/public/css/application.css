@@ -55,16 +55,18 @@
 #errors {
   position: fixed;
   left: 0;
-  top: 200px;
+  top: 50px;
   max-width: 10%;
   list-style-type: none;
   padding: 15px;
   display: none;
-  background-color: 
+  background-color: #c95338;
+  border-radius: 3px;
 }
 
 #errors li {
   padding: 10px;
+  color: #d9eaf7;
 }
 
 .ui-autocomplete {
