@@ -10,11 +10,9 @@ Candidates at bootcamps demand resources that deliver high value.  This tool is 
 
 Activerecord validations on all models
 
-Javascript validations on Login/Signup
+Javascript validations on Login
 
 Style icons
-
-Convert account creation from redirection to toggle display with jQuery.
 
 ## Open Debugging Issues
 
