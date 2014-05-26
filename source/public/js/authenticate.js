@@ -15,20 +15,21 @@ $(function() {
     var lastName = $('input[name="user[last_name]"]').val();
     var email =  $('input[name="user[email]"]').val();
     var password = $('input[name="user[password]"]').val();
-    var passwordConfirm = $('input[name="user[password]"]').val();
+    var passwordConfirm = $('input[name="confirm_password]"]').val();
 
 
     given_email = new Email(email);
     if (given_email.checkValid() === false){
       e.preventDefault();
-      $('input[name="user[email]"').attr('value', 'Invalid Email').css('background-color', 'pink');
+      $('#errors').append("<li>Invalid Email</li>");
     }
 
-    // given_password = new Password(password);
+    given_password = new Password(password);
 
-    // if (given_password.checkLength() === false){
-    //   $('#errors').append("<li>Password must be 8 characters long</li>");
-    // }
+    if (given_password.checkLength() === false){
+      e.preventDefault();
+      $('#errors').append("<li>Password must be 8 characters long</li>");
+    }
 
     // if (given_password.checkCapitalLetter() === false){
     //   $('#errors').append("<li>Password must have at least 1 capital letter</li>");
@@ -40,11 +41,11 @@ $(function() {
 
   });
 
-  // $('input').on('keyup', function(e){
-  //   if (e.keyCode != 13) {
-  //     $('form').val('');
-  //   }
-  // });
+  $('input').on('keyup', function(e){
+    if (e.keyCode != 13) {
+      $('#errors').empty();
+    }
+  });
 
 // -------------------------------LOGIC----------------------------------
 
