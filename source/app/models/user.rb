@@ -3,6 +3,9 @@ class User < ActiveRecord::Base
   has_many :favorites
   has_many :votes
 
+  # validates :first_name, :last_name, :email, presence: true
+  
+
   def password
     @password ||= BCrypt::Password.new(password_hash)
   end

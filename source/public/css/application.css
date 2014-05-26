@@ -1,37 +1,5 @@
-.ui-autocomplete {
-  max-height: 300px;
-  overflow-y: auto;
-  /* prevent horizontal scrollbar */
-  overflow-x: hidden;
-}
-
-.container {
-  margin: 20px auto;
-  width: 750px;
-  padding: 20px;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: #54a2dc;
-}
-
-.large_container {
-  margin: 20px auto;
-  width: 750px;
-  padding: 20px;
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: #54a2dc;
-}
-
-.dashboard {
-  border: 1px solid black;
-  border-radius: 5px;
-  display: inline-block;
-  position: fixed;
-  top: 20px;
-  padding: 25px 15px;
-  background-color: #b3d5ef;
-}
+/* ------------LANDING PAGE--------------
+----------------------------------------*/
 
 #home {
   margin: 20px auto;
@@ -75,6 +43,67 @@
   color: white;
   font-size: 18px;
 }
+
+#signup {
+  display:none;
+}
+
+#alt_action {
+  display: none;
+}
+
+#errors {
+  position: fixed;
+  left: 0;
+  top: 50px;
+  max-width: 10%;
+  list-style-type: none;
+  padding: 15px;
+  display: none;
+  background-color: #c95338;
+  border-radius: 3px;
+}
+
+#errors li {
+  padding: 10px;
+  color: #d9eaf7;
+}
+
+.ui-autocomplete {
+  max-height: 300px;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 20px auto;
+  width: 750px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #54a2dc;
+}
+
+.large_container {
+  margin: 20px auto;
+  width: 750px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #54a2dc;
+}
+
+.dashboard {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: inline-block;
+  position: fixed;
+  top: 20px;
+  padding: 25px 15px;
+  background-color: #b3d5ef;
+}
+
 
 #search_form {
   margin: 25px 0 0 80px;
@@ -224,7 +253,7 @@ button {
   margin: 0;
   padding: 0px 10px;
   border-radius: 3px;
-  width: 200px;
+  width: 210px;
   height: 50px;
   border: 1px solid #ecf2f4;
   -moz-box-shadow: 0 0 5px 1px #ecf2f4;

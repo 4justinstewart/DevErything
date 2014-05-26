@@ -3,19 +3,28 @@
     <h1>Welcome to DevErything.</h1>
   </header>
 
-  <form action='/signin' method="post">
+  <form class="authenticate" id="signin" action='/signin' method="post">
     <input type="text" name="email" placeholder="Email"/>
     <input type="password" name="password" placeholder="Password"/>
     <button id="login" type="submit">Sign in</button>
   </form>
 
+  <form class="authenticate" id="signup" action="/signup" method="post">
+      <input type="text" placeholder="First Name" name="user[first_name]"/>
+      <input type="text" placeholder="Last Name" name="user[last_name]"/>
+      <input type="text" placeholder="Email" name='user[email]'/>
+      <input type="password" placeholder='Password' name="user[password]"/>
+      <input type="password" placeholder='Confirm Password' name="confirm_password"/>
+      <button type="submit">Create Account</button>
+  </form>
+
   <div>
-    <h3>Check Out the Hype!</h3>
-    <button><a href='/signup'>Create Account</a></button>
+    <!-- <h3>Check Out the Hype!</h3> -->
+    <button class="auth_button">Sign Up</button>
+    <button class="auth_button" id="alt_action">Sign In</button>
   </div>
 
-  <!-- <div>
-    <h3>Check Out The Hype...</h3>
-    <button><a href="/posts">All Posts</a></button>
-  </div> -->
+  <div>
+    <ul id='errors'></ul>
+  </div>
 </div>
