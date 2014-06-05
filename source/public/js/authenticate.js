@@ -6,7 +6,7 @@ $(function() {
 
 
 
-  $('form').on('submit', function(e) {
+  $('#create_account').on('submit', function(e) {
     
     if ($(this).attr('id') === "signup") {
 
