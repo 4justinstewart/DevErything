@@ -25,6 +25,8 @@ $(function(){
     // })
 
 
+
+
      $("#search_form").submit(function(event){
       event.preventDefault();
       console.log("i'm here");
