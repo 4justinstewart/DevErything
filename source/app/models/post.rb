@@ -1,7 +1,5 @@
 class Post < ActiveRecord::Base
-  validates_presence_of :title, :content
-  # validates :title, allow_blank: false
-  # validates :content, allow_blank: false
+  validates :title, :content, presence: true
 
   belongs_to :user
   belongs_to :category

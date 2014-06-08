@@ -12,7 +12,7 @@ get '/posts/all' do
   redirect to '/posts'
 end
 
-get '/users/:user_id/posts' do  # erb file contains button to see all posts
+get '/users/:user_id/posts' do
   @header = "#{current_user.first_name}'s Dashboard"
   @button_route = "/posts"
   @button_text = "See All Resources"
@@ -21,9 +21,10 @@ get '/users/:user_id/posts' do  # erb file contains button to see all posts
   erb :'users/posts'
 end
 
-get '/users/:user_id/posts/new' do  # make a new post (HTML form view)
+get '/users/:user_id/posts/new' do
   @header = "Post a New Resource"
   @categories = Category.all
+
   erb :'posts/create'
 end
 

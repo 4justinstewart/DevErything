@@ -6,10 +6,11 @@ $(function() {
 
 
 
-  $('#create_account').on('submit', function(e) {
+  $('.authenticate').on('submit', function(e) {
     
     if ($(this).attr('id') === "signup") {
 
+      console.log("i'm here")
       var firstName = $('input[name="user[first_name]"]').val();
       var lastName = $('input[name="user[last_name]"]').val();
       var email =  $('input[name="user[email]"]').val();

@@ -7,7 +7,6 @@ $(document).ready(function() {
       return split( term ).pop();
     }
 
-
 		var availableTags = [];
 
 		$(".tags_input").focus(function(){
