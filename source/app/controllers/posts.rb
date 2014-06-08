@@ -65,8 +65,8 @@ patch '/posts/:id' do
 end
 
 get '/posts/:id/delete' do
-  @post = Post.find(params[:id])
-  @post.destroy
+  post = Post.find(params[:id])
+  post.destroy
 
   redirect to "/users/#{current_user.id}/posts"
 end
