@@ -63,17 +63,15 @@ class Post < ActiveRecord::Base
   def create_tag_associations(new_post_tags)
     all_tags = []
     new_post_tags.each do |tag_name|
-    existing_tag = Tag.find_by_name(tag_name)
-    if existing_tag
-      all_tags << existing_tag
-    else
-      new_tag = Tag.create(name: name.downcase)
-      all_tags << new_tag
+      existing_tag = Tag.find_by_name(tag_name)
+      if existing_tag
+        all_tags << existing_tag
+      else
+        new_tag = Tag.create(name: name.downcase)
+        all_tags << new_tag
+      end
     end
     self.tags = all_tags
-  end
-
-
   end
 
 end

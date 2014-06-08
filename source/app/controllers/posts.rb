@@ -42,8 +42,8 @@ post '/posts' do
   new_post = Post.create(params[:post])
   tag_names = params[:tagnames].split(', ')
   new_post.create_tag_associations(tag_names)
-  redirect to "/users/#{session[:user_id]}/posts"
 
+  redirect to "/users/#{session[:user_id]}/posts"
 end
 
 get '/users/:user_id/posts/:id/update' do
@@ -51,32 +51,17 @@ get '/users/:user_id/posts/:id/update' do
   @categories = Category.all
   @post = Post.find(params[:id])
   @tags = @post.tags
-  #HTML form rendered with existing post info
+ 
   erb :'posts/update'
 end
 
 patch '/posts/:id' do
-  p params
-  @post_to_edit = Post.find(params[:id])
-  p @post_to_edit
-  @post_to_edit.update_attributes(params[:post])
+  post_to_edit = Post.find(params[:id])
+  post_to_edit.update_attributes(params[:post])
+  tag_names = params[:tagnames].split(', ')
+  post_to_edit.create_tag_associations(tag_names)
 
-  @post_tags = @post_to_edit.tags
-  @tag_names = params[:tagnames].split(', ')
-
-  updated_tags = []
-  @tag_names.each do |name|
-    @tag = Tag.find_by_name(name)
-    if @tag
-      updated_tags << @tag
-    else
-      @new_tag = Tag.create(name: name)
-      updated_tags << @new_tag
-    end
-  end
-  @post_to_edit.tags = updated_tags
-
-  redirect "/posts/#{@post_to_edit.id}"
+  redirect "/posts/#{post_to_edit.id}"
 end
 
 get '/posts/:id/delete' do
