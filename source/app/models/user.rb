@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
   has_many :favorites
   has_many :votes
 
-  # validates :first_name, :last_name, :email, presence: true
+  validates :first_name, :last_name, :email, presence: true
+  validates :email, uniqueness: true
   
 
   def password

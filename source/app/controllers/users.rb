@@ -21,9 +21,15 @@ get '/signup' do
 end
 
 post '/signup' do
-  @user = User.create(params[:user])
-  session[:user_id] = @user.id
-  redirect to '/posts'
+  user = User.create(params[:user])
+  puts "_______________________________"
+  puts user.valid?
+  if user.valid?
+    session[:user_id] = user.id
+    redirect to '/posts'
+  else
+    redirect to '/'
+  end
 end
 
 get '/signout' do
