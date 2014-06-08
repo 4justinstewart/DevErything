@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+
+gem "table_print"
+
 # PostgreSQL driver
 gem 'pg'
 

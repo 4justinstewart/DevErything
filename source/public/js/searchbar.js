@@ -25,10 +25,14 @@ $(function(){
     // })
 
 
+
+
      $("#search_form").submit(function(event){
       event.preventDefault();
+      console.log("i'm here");
       
-      var searchTag = $("#search_input").val().toLowerCase();
+      var searchTag = $("#search_input").val()
+      // .toLowerCase();
       $('.smaller_container').empty();
 
       $.ajax({
@@ -37,6 +41,7 @@ $(function(){
         data: {tag: searchTag},
         success: function(response){
           var searchObj = JSON.parse(response);
+          console.log(searchObj);
 
           Object.keys(searchObj).forEach(function(catKey){
             var postObj = searchObj[catKey]

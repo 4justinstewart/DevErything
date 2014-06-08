@@ -42,6 +42,10 @@ end
 
 post '/search' do
   name = params[:tag]
+  p "***********************************************************"
+  p "THIS IS THE NAME OF THE TAG"
+  p params
+  p name
   tag = Tag.find_by_name(name)
   tag_id = tag.id
   hash = Post.find_all_posts_by_tag(tag_id, current_user.id)
