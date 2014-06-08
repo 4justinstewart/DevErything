@@ -39,24 +39,9 @@ get '/posts/:id' do
 end
 
 post '/posts' do
-  @new_post = Post.create(params[:post])
-  @tag_names = params[:tagnames].split(', ')
-
-  #---------------------------------------------------
-  # PUT IN MODEL:: @tags = get_tags(@tag_names)
-  @tags = []
-  @tag_names.each do |name|
-    @tag = Tag.find_by_name(name)
-    if @tag
-      @tags << @tag
-    else
-      @new_tag = Tag.create(name: name)
-      @tags << @new_tag
-    end
-  end
-
-  #--------------------------------------------------
-  @new_post.tags = @tags  # THIS IS WHERE THE TAGGINGS ARE DECLARED.
+  new_post = Post.create(params[:post])
+  tag_names = params[:tagnames].split(', ')
+  new_post.create_tag_associations(tag_names)
   redirect to "/users/#{session[:user_id]}/posts"
 
 end
