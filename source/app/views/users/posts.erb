@@ -16,10 +16,10 @@
     <% @categories.each do |cat| %>
       <h2><%= cat.name %></h2>
       
-        <% cat.posts.where("user_id = #{session[:user_id]}").each do |post| %>
-          <a href="/posts/<%=post.id%>"><%=post.title%></a>
-        <% end %>
-      
+      <% cat.posts.where("user_id = #{session[:user_id]}").each do |post| %>
+        <a id="user_post" href="/posts/<%=post.id%>"><%=post.title%></a>
+      <% end %>
+    
     <% end %>
   </div>
 </div>

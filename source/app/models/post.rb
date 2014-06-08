@@ -67,7 +67,7 @@ class Post < ActiveRecord::Base
       if existing_tag
         all_tags << existing_tag
       else
-        new_tag = Tag.create(name: name.downcase)
+        new_tag = Tag.create(name: tag_name.downcase)
         all_tags << new_tag
       end
     end

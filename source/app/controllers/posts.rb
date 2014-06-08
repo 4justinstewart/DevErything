@@ -18,6 +18,7 @@ get '/users/:user_id/posts' do
   @button_text = "See All Resources"
   @posts = current_user.posts
   @categories = Category.all
+
   erb :'users/posts'
 end
 
@@ -43,7 +44,7 @@ post '/posts' do
   tag_names = params[:tagnames].split(', ')
   new_post.create_tag_associations(tag_names)
 
-  redirect to "/users/#{session[:user_id]}/posts"
+  redirect to "/users/#{current_user.id}/posts"
 end
 
 get '/users/:user_id/posts/:id/update' do

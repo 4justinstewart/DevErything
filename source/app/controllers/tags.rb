@@ -19,6 +19,7 @@ get '/tags/:id' do
   @tag_name = @tag.name.gsub(',', '').upcase
   @header = "All Posts with #{@tag_name}"
   @posts = @tag.posts
+  
   erb :'posts/posts_by_tag'
 end
 
@@ -41,7 +42,7 @@ end
 #-----------------------adding search function -------------------------
 
 post '/search' do
-  name = params[:tag]
+  name = params[:tag].downcase
   p "***********************************************************"
   p "THIS IS THE NAME OF THE TAG"
   p params
