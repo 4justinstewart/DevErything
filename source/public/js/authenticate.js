@@ -60,23 +60,23 @@ $(function() {
     var lastName = $('input[name="user[last_name]"]').val();
     var email =  $('input[name="user[email]"]').val();
     var password = $('input[name="user[password]"]').val();
-    var passwordConfirm = $('input[name="confirm_password]"]').val();
+    var passwordConfirm = $('input[name="confirm_password"]').val();
 
     var given_name = new Name(firstName, lastName);
     var given_email = new Email(email);
     var given_password = new Password(password, passwordConfirm);
 
-    if (given_name.checkPresence() === fa
+    if (given_name.checkPresence() === false) {
       e.preventDefault();
       $('#errors').append("<li>First and Last Name are required</li>");
     }
     
-    if (given_email.checkValid() === fa
+    if (given_email.checkValid() === false) {
       e.preventDefault();
       $('#errors').append("<li>Invalid Email</li>");
     }
 
-    if (given_password.checkLength() === fa
+    if (given_password.checkLength() === false) {
       e.preventDefault();
       $('#errors').append("<li>Password must be 8 characters long</li>");
     }

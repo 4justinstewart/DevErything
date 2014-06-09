@@ -12,6 +12,7 @@ post '/signin' do
     session[:user_id] = @user.id
     redirect "/posts"
   else
+    @errors = "Email and/or password are not valid.  Try Again or Sign Up."
     redirect '/'
   end
 end
