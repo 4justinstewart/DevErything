@@ -9,14 +9,13 @@ before '/posts/*' do
 end
 
 post '/signin' do
-  @email = params[:email]
-  @password = params[:password]
-  @user = User.authenticate(@email, @password)
-  if @user
-    session[:user_id] = @user.id
+  email = params[:email]
+  password = params[:password]
+  user = User.authenticate(email, password)
+  if user
+    session[:user_id] = user.id
     redirect "/posts"
   else
-    @errors = "Email and/or password are not valid.  Try Again or Sign Up."
     redirect '/'
   end
 end
@@ -27,7 +26,6 @@ end
 
 post '/signup' do
   user = User.new(params[:user])
-
   if user.save
     session[:user_id] = user.id
     redirect to '/posts'
