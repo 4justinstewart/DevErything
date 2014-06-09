@@ -1,3 +1,7 @@
 get '/' do
-  erb :index
+  if session[:user_id]
+    redirect to '/posts'
+  else
+    erb :index
+  end
 end

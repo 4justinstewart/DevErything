@@ -4,6 +4,10 @@ before '/users/*' do
   redirect '/' unless session[:user_id]
 end
 
+before '/posts/*' do
+  redirect '/' unless session[:user_id]
+end
+
 post '/signin' do
   @email = params[:email]
   @password = params[:password]
