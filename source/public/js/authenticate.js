@@ -55,11 +55,7 @@ $(function() {
     $('.auth_button').toggle();
   });
 
-
-
   $('#signup').on('submit', function(e) {
-      
-    console.log("i'm here");
     var firstName = $('input[name="user[first_name]"]').val();
     var lastName = $('input[name="user[last_name]"]').val();
     var email =  $('input[name="user[email]"]').val();
@@ -70,20 +66,17 @@ $(function() {
     var given_email = new Email(email);
     var given_password = new Password(password, passwordConfirm);
 
-    if (given_name.checkPresence() === false){
-      console.log("Name failing.");
+    if (given_name.checkPresence() === fa
       e.preventDefault();
       $('#errors').append("<li>First and Last Name are required</li>");
     }
     
-    if (given_email.checkValid() === false){
-      console.log("Invalid email");
+    if (given_email.checkValid() === fa
       e.preventDefault();
       $('#errors').append("<li>Invalid Email</li>");
     }
 
-    if (given_password.checkLength() === false){
-      console.log("password not long enough");
+    if (given_password.checkLength() === fa
       e.preventDefault();
       $('#errors').append("<li>Password must be 8 characters long</li>");
     }
@@ -102,32 +95,13 @@ $(function() {
       e.preventDefault();
       $('#errors').append("<li>Passwords must match one another</li>");
     }
-    
-
-    console.log(given_email.checkValid());
 
     $('#errors').show();
   });
-
-
-
-//     // if (given_password.checkPresence() === false){
-//     //   e.preventDefault();
-//     //   $('#errors').append("<li>Password field is required</li>");
-//     // }
-
 
   $('input').on('keyup', function(e){
     if (e.keyCode != 13) {
       $('#errors').empty().hide();
     }
   });
-
-// // -------------------------------LOGIC----------------------------------
-  
 });
-//   Password.prototype.checkPresence = function() {
-//     if (this.password === "") {
-//       return false;
-//     }
-//   };
