@@ -21,10 +21,9 @@ get '/signup' do
 end
 
 post '/signup' do
-  user = User.create(params[:user])
-  puts "_______________________________"
-  puts user.valid?
-  if user.valid?
+  user = User.new(params[:user])
+
+  if user.save
     session[:user_id] = user.id
     redirect to '/posts'
   else

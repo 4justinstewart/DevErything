@@ -1,80 +1,5 @@
 $(function() {
-  $('.auth_button').on('click', function(){
-    $('.authenticate').toggle(600);
-    $('.auth_button').toggle();
-  });
 
-
-
-  $('.authenticate').on('submit', function(e) {
-    
-    if ($(this).attr('id') === "signup") {
-
-      console.log("i'm here")
-      var firstName = $('input[name="user[first_name]"]').val();
-      var lastName = $('input[name="user[last_name]"]').val();
-      var email =  $('input[name="user[email]"]').val();
-      var password = $('input[name="user[password]"]').val();
-      var passwordConfirm = $('input[name="confirm_password]"]').val();
-      var given_name = new Name(firstName, lastName);
-      var given_email = new Email(email);
-      var given_password = new Password(password, passwordConfirm);
-    }
-
-    if (given_password.checkLength() === false){
-      e.preventDefault();
-      $('#errors').append("<li>Password must be 8 characters long</li>");
-    }
-
-    if (given_password.checkCapitalLetter() === false){
-      e.preventDefault();
-      $('#errors').append("<li>Password must have at least 1 capital letter</li>").fadeIn();
-    }
-
-    if (given_password.checkNumericPresence() === false){
-      e.preventDefault();
-      $('#errors').append("<li>Password must have at least 1 number</li>");
-    }
-
-    if (given_password.checkReliability() === false){
-      e.preventDefault();
-      $('#errors').append("<li>Passwords must match one another</li>");
-    }
-    
-    if (given_name.checkPresence() === false){
-      e.preventDefault();
-      $('#errors').append("<li>First and Last Name are required</li>");
-    }
-    
-    if (given_email.checkValid() === false){
-      e.preventDefault();
-      $('#errors').append("<li>Invalid Email</li>");
-    }
-  });
-
-//     // if ($(this).attr('id') === 'signin') {
-//     //   var email =  $('input[name="email"]').val();
-//     //   var password = $('input[name="password"]').val();
-//     //   var given_email = new Email(email);
-//       // var given_password = new Password(password);
-
-//     // }
-
-
-//     // if (given_password.checkPresence() === false){
-//     //   e.preventDefault();
-//     //   $('#errors').append("<li>Password field is required</li>");
-//     // }
-
-
-//   $('input').on('keyup', function(e){
-//     if (e.keyCode != 13) {
-//       $('#errors').empty().hide();
-//     }
-//   });
-
-// // -------------------------------LOGIC----------------------------------
-  
   function Name(firstname, lastname){
     this.first = firstname;
     this.last = lastname;
@@ -101,6 +26,12 @@ $(function() {
     this.confirm = confirmpw;
   }
 
+  Password.prototype.checker = function(regex){
+    if (this.password.match(regex) === null) {
+      return false;
+    }
+  };
+
   Password.prototype.checkLength = function() {
     return this.checker(/\S{8,}/);
   };
@@ -118,13 +49,83 @@ $(function() {
       return false;
     }
   };
-});
+  
+  $('.auth_button').on('click', function(){
+    $('.authenticate').toggle(600);
+    $('.auth_button').toggle();
+  });
 
-//   Password.prototype.checker = function(regex){
-//     if (this.password.match(regex) === null) {
-//       return false;
-//     }
-//   };
+
+
+  $('#signup').on('submit', function(e) {
+      
+    console.log("i'm here");
+    var firstName = $('input[name="user[first_name]"]').val();
+    var lastName = $('input[name="user[last_name]"]').val();
+    var email =  $('input[name="user[email]"]').val();
+    var password = $('input[name="user[password]"]').val();
+    var passwordConfirm = $('input[name="confirm_password]"]').val();
+
+    var given_name = new Name(firstName, lastName);
+    var given_email = new Email(email);
+    var given_password = new Password(password, passwordConfirm);
+
+    if (given_name.checkPresence() === false){
+      console.log("Name failing.");
+      e.preventDefault();
+      $('#errors').append("<li>First and Last Name are required</li>");
+    }
+    
+    if (given_email.checkValid() === false){
+      console.log("Invalid email");
+      e.preventDefault();
+      $('#errors').append("<li>Invalid Email</li>");
+    }
+
+    if (given_password.checkLength() === false){
+      console.log("password not long enough");
+      e.preventDefault();
+      $('#errors').append("<li>Password must be 8 characters long</li>");
+    }
+
+    if (given_password.checkCapitalLetter() === false){
+      e.preventDefault();
+      $('#errors').append("<li>Password must have at least 1 capital letter</li>").fadeIn();
+    }
+
+    if (given_password.checkNumericPresence() === false){
+      e.preventDefault();
+      $('#errors').append("<li>Password must have at least 1 number</li>");
+    }
+
+    if (given_password.checkReliability() === false){
+      e.preventDefault();
+      $('#errors').append("<li>Passwords must match one another</li>");
+    }
+    
+
+    console.log(given_email.checkValid());
+
+    $('#errors').show();
+  });
+
+
+
+//     // if (given_password.checkPresence() === false){
+//     //   e.preventDefault();
+//     //   $('#errors').append("<li>Password field is required</li>");
+//     // }
+
+
+  $('input').on('keyup', function(e){
+    if (e.keyCode != 13) {
+      $('#errors').empty().hide();
+    }
+  });
+
+// // -------------------------------LOGIC----------------------------------
+  
+});
 //   Password.prototype.checkPresence = function() {
 //     if (this.password === "") {
 //       return false;
