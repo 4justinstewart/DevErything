@@ -1,7 +1,5 @@
 class Post < ActiveRecord::Base
-  validates_presence_of :title, :content
-  # validates :title, allow_blank: false
-  # validates :content, allow_blank: false
+  validates :title, :content, presence: true
 
   belongs_to :user
   belongs_to :category
@@ -62,5 +60,18 @@ class Post < ActiveRecord::Base
     post_votes.sort_by { |key, value| value }.reverse.flatten.delete_if { |x| x.is_a? Integer }
   end
 
+  def create_tag_associations(new_post_tags)
+    all_tags = []
+    new_post_tags.each do |tag_name|
+      existing_tag = Tag.find_by_name(tag_name)
+      if existing_tag
+        all_tags << existing_tag
+      else
+        new_tag = Tag.create(name: tag_name.downcase)
+        all_tags << new_tag
+      end
+    end
+    self.tags = all_tags
+  end
 
 end

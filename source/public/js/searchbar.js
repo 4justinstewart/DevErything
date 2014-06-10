@@ -10,7 +10,6 @@ $(function(){
       data: {value: "params"},
       success: function(response){
         availableTags = JSON.parse(response)
-        // console.log(availableTags);
         $("#search_input").autocomplete({
           source: availableTags
         })

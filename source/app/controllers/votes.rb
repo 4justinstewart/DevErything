@@ -14,7 +14,9 @@ post "/votes" do  #CREATE VOTE OBJ.
     upvote: params[:upvote],
     downvote: params[:downvote]
   )
-  "200"
+
+  post = Post.find(params[:post_id])
+  post.calculate_vote_total.to_json
 end
 
 get "/votes/:id" do

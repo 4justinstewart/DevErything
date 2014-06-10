@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem "table_print"
 
 # PostgreSQL driver
@@ -20,7 +19,7 @@ gem 'rake'
 
 gem 'shotgun'
 
-group :test do
+group :test, :development do
   gem 'faker'
   gem 'rspec'
 end
