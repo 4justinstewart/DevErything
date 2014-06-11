@@ -1,0 +1,19 @@
+<div class='container'>
+  <%= erb :_nav %>
+  <form action='/posts' method='post'>
+    <input type="hidden" name="post[user_id]" value="<%=session[:user_id]%>"/>
+    <h2><input type='text' placeholder="<%= @title_error ||= "Title" %>" name='post[title]' required autofocus/></h2>
+    <select name="post[category_id]" style="margin-bottom: 25px;">
+      <% @categories.each do |cat| %>
+        <option value="<%= cat.id %>"><%= cat.name %></option>
+      <% end %>
+    </select>
+    <input type='text' placeholder="URL" name="post[url]" required/><br>
+    <textarea name='post[content]' cols="60" rows="5" placeholder="<%= @content_error ||= "Description of Resource Content" %>"></textarea><br><br>
+    <textarea class="tags_input" name='tagnames' cols="60" rows="2" placeholder="Tags separated by commas, ie. Javascript, Git, Parsing" required></textarea><br><br>
+    <button type='submit'>Create your post</button>
+  </form>
+</div>
+
+<%= erb :_dashboard %>
+

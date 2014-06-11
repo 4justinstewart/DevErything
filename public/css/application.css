@@ -1,0 +1,324 @@
+#home {
+  margin: 20px auto;
+  width: 600px;
+  height: 600px;
+  padding: 20px;
+  border: 1px dotted black;
+  border-radius: 10px;
+  background-image: url('/images/dbc.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#home h1 {
+  font-family: Helvetica, sans-serif;
+  color: white;
+  margin-top: 60px;
+}
+
+#home form {
+  margin-top: 40px;
+}
+
+#home input {
+  height: 35px;
+}
+
+#home a {
+  color: white;
+  font-family: Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+#home h3 {
+  color: white;
+  font-size: 20px;
+}
+
+#home button {
+  color: white;
+  font-size: 18px;
+}
+
+#signup {
+  display:none;
+}
+
+#alt_action {
+  display: none;
+}
+
+#errors {
+  position: fixed;
+  left: 0;
+  top: 50px;
+  max-width: 10%;
+  list-style-type: none;
+  padding: 15px;
+  display: none;
+  background-color: #c95338;
+  border-radius: 3px;
+}
+
+#errors li {
+  padding: 10px;
+  color: #d9eaf7;
+}
+
+.ui-autocomplete {
+  max-height: 300px;
+  overflow-y: auto;
+  /* prevent horizontal scrollbar */
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 20px auto;
+  width: 750px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #54a2dc;
+}
+
+.large_container {
+  margin: 20px auto;
+  width: 750px;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #54a2dc;
+}
+
+.dashboard {
+  border: 1px solid black;
+  border-radius: 5px;
+  display: inline-block;
+  position: fixed;
+  top: 20px;
+  padding: 25px 15px;
+  background-color: #b3d5ef;
+}
+
+
+#search_form {
+  margin: 25px 0 0 80px;
+  clear:both;
+}
+
+#search_form input {
+  width: 400px;
+  height: 45px;
+  margin-bottom: 30px;
+  font-size: 24px;
+}
+
+div[class*='resource'] {
+  margin-left: 100px;
+}
+
+input[type='checkbox'] {
+  border:1px solid black;
+}
+.dashboard_col {
+  width: 800px;
+  display: inline-block;
+  margin-left: 100px;
+}
+
+#user_post {
+  display: block;
+}
+
+
+.dashboard_col h2:first-child{
+  display: inline-block;
+  padding-bottom: 15px;
+  font-size: 32px;
+  border-bottom: 2px solid lightgrey;
+}
+
+.dashboard_col td input {
+  margin-right: 20px;
+}
+
+div[class^='all_resource'] {
+  display: none;
+  width: 475px;
+}
+
+div[class*='resource'] td input {
+  margin-right: 20px;
+}
+
+
+.show_loser span{
+  display: block;
+}
+
+.show_loser span a{
+}
+
+.show_loser span input{
+  margin-right: 20px;
+
+}
+
+.container span {
+  margin-left: 20px;
+}
+#vote_total {
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.dashboard img {
+  display: block;
+  width: 70px;
+  margin-bottom: 10px;
+}
+
+div[class*='resource'] img {
+  width: 30px;
+  margin-left: 10px;
+}
+
+img[alt^='All'] {
+  cursor: pointer;
+}
+
+div[class*='resource'] h2 {
+  display: inline-block;
+}
+
+h1{
+  display: inline-block;
+  margin: 0 0 0 2%;
+  font-size: 48px;
+  text-align: left;
+
+}
+
+nav {
+  text-align: center;
+}
+
+nav h1 {
+  float: left;
+  margin: 0 0 30px 50px;
+}
+
+nav img {
+  width: 45px;
+  float:left;
+}
+
+nav .header {
+  padding-right: 45px;
+}
+
+th {
+  text-align: left;
+}
+
+body {
+  background-color: #d9eaf7;
+}
+
+a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 5px 5px 5px 5px;
+}
+
+a:visited {
+  color: #183951;
+
+}
+
+a:link {
+  color: #183951;
+}
+
+a:hover{
+  color: #d0e5f5;
+}
+
+header h1 {
+  text-align:center;
+  display: block;
+}
+button {
+  background-color: #1a3c56;
+  margin: 0;
+  padding: 0px 10px;
+  border-radius: 3px;
+  width: 210px;
+  height: 50px;
+  border: 1px solid #ecf2f4;
+  -moz-box-shadow: 0 0 5px 1px #ecf2f4;
+  -webkit-box-shadow: 0 0 5px 1px #ecf2f4;
+  box-shadow: 0 0 5px 1px #ecf2f4;
+  color: #d9e5ea;
+  /*font-size: 18px;*/
+  margin: 10px 20px;
+}
+
+#dbc {
+  width: 30%;
+  margin: 5% 2% 0 0;
+  border-radius: 8px;
+}
+
+h3 {
+  margin-left: 20px;
+}
+
+.update {
+  width: 50px;
+}
+
+form input {
+  display: block;
+  height: 1.500em;
+  text-indent: 5px;
+  border-radius: 5px;
+  padding: 5px 0;
+  margin: 0 0 10px 20px;
+}
+
+form textarea {
+  margin: 0 0 10px 20px;
+  border-radius: 3px;
+}
+
+form select {
+  border: 1px solid black;
+  margin: 10px 10px 10px 20px;
+  height: 35px;
+}
+
+form option {
+}
+
+.submit {
+  display: inline;
+}
+
+
+.dashboard button {
+  font-size: 24px;
+}
+
+button a {
+  color: #d9e5ea;
+  text-decoration: none;
+}
+
+button img {
+  width: 40px;
+  margin-right: 25px;
+}
+

@@ -1,0 +1,7 @@
+<% if current_user %>
+  <div class="dashboard">
+    <a href="/users/<%=session[:user_id]%>/posts/new"><img src="/images/compose.svg" alt="Compose Post"></a>
+    <a href="/users/<%=session[:user_id]%>/posts"><img src="/images/account.svg" alt="Go to Dashboard"></a>
+    <a href='/signout'><img src="/images/logout.svg" alt="Logout"></a>
+  </div>
+<% end %>
