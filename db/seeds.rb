@@ -14,23 +14,23 @@ categories.each do |cat|
 end
 
 # -------------------------FAKER DOCUMENTATION-----------------------
-5.times do
-  first = Faker::Name.first_name
-  last = Faker::Name.last_name
-  email = Faker::Internet.email
-  @user = User.create!(first_name: first, last_name: last, email: email , password: 'password')
-  15.times do
-    title = Faker::Lorem.sentence(1).titleize.gsub('.', '')
-    url = Faker::Internet.url
-    content = Faker::Lorem.paragraph(3)
-    category = Category.all.sample
-    @post = Post.create!(title: title, url: url, content: content, user_id: 1, category_id: category.id)
-    5.times do |i|
-      post_tags = Tag.all.sample(rand(5..15))
-      @post.tags = post_tags
-    end
-  end
-end
+# 5.times do
+#   first = Faker::Name.first_name
+#   last = Faker::Name.last_name
+#   email = Faker::Internet.email
+#   @user = User.create!(first_name: first, last_name: last, email: email , password: 'password')
+#   15.times do
+#     title = Faker::Lorem.sentence(1).titleize.gsub('.', '')
+#     url = Faker::Internet.url
+#     content = Faker::Lorem.paragraph(3)
+#     category = Category.all.sample
+#     @post = Post.create!(title: title, url: url, content: content, user_id: 1, category_id: category.id)
+#     5.times do |i|
+#       post_tags = Tag.all.sample(rand(5..15))
+#       @post.tags = post_tags
+#     end
+#   end
+# end
 
 # -----------------------HARD CODED DOCUMENTATION---------------------
 
