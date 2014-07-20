@@ -34,8 +34,7 @@ end
 
 # -----------------------HARD CODED DOCUMENTATION---------------------
 
-User.create!(first_name: "Rohan", last_name: "Mathur", email: "rmathur101@gmail.com" , password: 'password')
-User.create!(first_name: "Justin", last_name: "Stewart", email: "justing@gmail.com" , password: 'password')
+User.create!(first_name: "Admin", last_name: "Admin", email: "admin@gmail.com" , password: 'password!')
 
 Post.create!(title: "Getting Started With Ruby on Rails", url: "http://alistapart.com/article/gettingstartedwithrubyonrails", content: "Rails against the machine!", category_id: "1", user_id: "1")
 Post.create!(title: "Ruby Enumerables", url: "http://www.ruby-doc.org/core-2.1.1/Enumerable.html", content: "I love ruby. I love enumerables.", category_id: "2", user_id: "1")
