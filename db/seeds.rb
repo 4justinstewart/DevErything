@@ -1,4 +1,3 @@
-require 'faker'
 # require 'activesupport'
 
 tags = %w(API Ruby Object-Oreinted Parsing CSV Nokogiri HTTP Javascript CoffeeScript SQL ActiveRecord Rails Migrations Associations Validations Method Class RoR Node JQuery Pairing Mentoring Meetup Networking HTML CSS Plugin Array Hash Enumerable Kernel Documentation Syntax ErrorHandling Exception Variable String Integer Number Blocks Procs Lambdas Regex Conditional Operator Session CRUD Params Routes MVC View Controller Model Sinatra EngineeringEmpathy Database ORM LinkedList Stack Recursive Algorithms SaSS Gem Phase1 Phase2 Phase3)
@@ -14,6 +13,7 @@ categories.each do |cat|
 end
 
 # -------------------------FAKER DOCUMENTATION-----------------------
+# require 'faker'
 # 5.times do
 #   first = Faker::Name.first_name
 #   last = Faker::Name.last_name
