@@ -11,7 +11,14 @@
         <img class="image" src="/images/posts.svg" alt="All Posts"/>
         <% get_popular_posts(cat).each do |post| %>
           <p>
-            <input class="checkbox" type="checkbox" name="option" value="<%= post.id %>" <%= is_favorite(post.id, current_user.id) %>>
+
+            <% if @user_favorites.include?(post.id) %>
+              <% @checked = "checked" %>
+            <% else %>
+              <% @checked = "" %>
+            <% end %>
+
+            <input class="checkbox" type="checkbox" name="option" value="<%= post.id %>" <%= @checked %>>
             <a href="/posts/<%= post.id %>"><%=post.title%></a>
           </p>
         <% end %>
@@ -20,7 +27,12 @@
           <% if (get_loser_posts(cat)).empty? != true %>
             <% get_loser_posts(cat).each do |loser_post| %>
               <p>
-                <input class="checkbox" type="checkbox" name="option" value="<%= loser_post.id %>" <%= is_favorite(loser_post.id, current_user.id) %>>
+              <% if @user_favorites.include?(loser_post.id) %>
+                <% @checked = "checked" %>
+              <% else %>
+                <% @checked = "" %>
+              <% end %>
+                <input class="checkbox" type="checkbox" name="option" value="<%= loser_post.id %>" <%= @checked %>>
                 <a href="/posts/<%= loser_post.id %>"><%=loser_post.title%></a>
               </p>
             <% end %>

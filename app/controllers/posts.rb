@@ -5,6 +5,8 @@ get '/posts' do
   @header = "Resource HQ"
   @posts = Post.all
   @categories = Category.all
+  @user_favorites = current_user.favorites.pluck(:post_id)
+
   erb :'posts/index'
 end
 
@@ -52,7 +54,7 @@ get '/users/:user_id/posts/:id/update' do
   @categories = Category.all
   @post = Post.find(params[:id])
   @tags = @post.tags
- 
+
   erb :'posts/update'
 end
 
